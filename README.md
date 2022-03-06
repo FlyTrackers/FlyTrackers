@@ -8,16 +8,16 @@
 
 ## Overview
 ### Description
-[Description of your app]
+Tracks a plane given a plane tail number, flight number, or other identifiable information. Can be used to track your flight status since delays can usually occur during the previous flights your plane has been on, with no knowledge of that being passed to the traveler. 
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
-- **Category:**
-- **Mobile:**
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+- **Category:** Travel
+- **Mobile:** This app would be primarily a mobile app to allow quick and easy access while the user is traveling or going about their day. There could be implementation for a website version that includes more features in the long run.
+- **Story:** Tracks the given planes a user requests - this could be for plane hobbyists who enjoy following planes, or travelers who would like to know where their plane is or if it is being delayed.
+- **Market:** Any traveler or hobbyist.
+- **Habit:** This app could be used whenever or wherever the user chose.
+- **Scope:** ???
 
 ## Product Spec
 
@@ -25,17 +25,20 @@
 
 **Required Must-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* User logs in to access the list of planes they're tracking, as well as settings
+* User can choose any additional planes to add based on set criteria.\
+* User can see specific aircraft statistics (i.e. how many 737-800's there are heading to Miami)
+* Settings (Accessibility, Notifications, General, etc)
 
 **Optional Nice-to-have Stories**
-
-* [fill in your required user stories here]
-* ...
+* Logs of previous flights that were tracked
+* Additional statistics based on the user (i.e. Map plot showing their travel history?)
+* Random picker of a plane or flight
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
+* Login
+* Register - User can sign up for an account
    * [list associated required story here]
    * ...
 * [list second screen here]
