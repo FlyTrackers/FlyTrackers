@@ -7,6 +7,7 @@
 2. [Schema](#Schema)
 
 ## Overview
+
 ### Description
 Tracks a plane given a plane tail number, flight number, or other identifiable information. Can be used to track your flight status since delays can usually occur during the previous flights your plane has been on, with no knowledge of that being passed to the traveler. 
 
@@ -72,7 +73,6 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 * Profile/Settings -> users can modify their account or app settings or toggle dark mode
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
 <img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/flytracker_wireframe.jpeg?raw=true" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
