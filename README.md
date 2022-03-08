@@ -73,7 +73,7 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/flytracker_wireframe.jpeg?raw=true" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
