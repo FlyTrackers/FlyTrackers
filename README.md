@@ -34,33 +34,40 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 * Logs of previous flights that were tracked
 * Additional statistics based on the user (i.e. Map plot showing their travel history?)
 * Random picker of a plane or flight
+* Public feed to post interesting data
 
 ### 2. Screen Archetypes
 
 * Login
 * Register - User can sign up for an account
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+   * The user can choose to create a new account, or login in with a previously made account
+   * Once logged in, user heads to their main tab view where they can see a list of their tracked flights or planes
+* User can see list of their tracked planes or flight
+   * After logging in, user sees a list of their flight or planes.
+   * User can choose to modify their selected planes
+* User can search for a flight or plane based on a set of filters
+   * If user finds a plane/flight of interest, can add it to their tracked list
+* User can change their personal settings
+* [OPTIONAL] User can view a public feed with flights/planes of interest
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* User's plane/flight list
+* Search tab
+* Profile/Settings Tab
+
+[OPTIONAL] 
+* Public feed tab
+* Randomized plane/flight suggestion tab
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* User is logged in or allowed to register
+* User gets sent to tracked list -> these can be modified or deleted
+* User can search and add to their tracked list, given a wide variety of filters
+* Profile/Settings -> users can modify their account or app settings
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
