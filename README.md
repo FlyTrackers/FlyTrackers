@@ -17,7 +17,7 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 - **Story:** Tracks the given planes a user requests - this could be for plane hobbyists who enjoy following planes, or travelers who would like to know where their plane is or if it is being delayed.
 - **Market:** Any traveler or hobbyist.
 - **Habit:** This app could be used whenever or wherever the user chose.
-- **Scope:** ???
+- **Scope:** We first test our app with a  group of users siloed into business travelers, frequent travelers, and casual travelers. Based on our feedback, we tailor this app for business or consumer uses. For business, we would add integration with automation services like IFTTT to notify relevant parties of an arrival to schedule pick-ups or adjust meeting times (all this takes place while the passenger is in the air). For vacationers and adventurers, we could keep track of all their flights and create a flight-journal to visualize their travels around the world. 
 
 ## Product Spec
 
@@ -26,7 +26,7 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 **Required Must-have Stories**
 
 * User logs in to access the list of planes they're tracking, as well as settings
-* User can choose any additional planes to add based on set criteria.\
+* User can choose any additional planes to add based on set criteria
 * User can see specific aircraft statistics (i.e. how many 737-800's there are heading to Miami)
 * Settings (Accessibility, Notifications, General, etc)
 
@@ -35,6 +35,7 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 * Additional statistics based on the user (i.e. Map plot showing their travel history?)
 * Random picker of a plane or flight
 * Public feed to post interesting data
+* Chat log with other people following a specific flight? 
 
 ### 2. Screen Archetypes
 
@@ -66,8 +67,9 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 
 * User is logged in or allowed to register
 * User gets sent to tracked list -> these can be modified or deleted
-* User can search and add to their tracked list, given a wide variety of filters
-* Profile/Settings -> users can modify their account or app settings
+* User clicks on item in tracked list -> additional details about flight are revealed
+* User can search and add to their tracked list, given a wide variety of filters -> list shows only items meeting filter criteria
+* Profile/Settings -> users can modify their account or app settings or toggle dark mode
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
