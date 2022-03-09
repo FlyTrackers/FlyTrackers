@@ -29,13 +29,14 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 * User logs in to access the list of planes they're tracking, as well as settings
 * User can choose any additional planes to add based on set criteria
 * User can see specific aircraft statistics (i.e. how many 737-800's there are heading to Miami)
-* Settings (Accessibility, Notifications, General, etc)
+* Settings (Accessibility, Notifications, General, Dark Mode, Units, etc)
 
 **Optional Nice-to-have Stories**
 * Logs of previous flights that were tracked
 * Additional statistics based on the user (i.e. Map plot showing their travel history?)
 * Random picker of a plane or flight
 * Public feed to post interesting data
+* Profile Picture
 * Chat log with other people following a specific flight? 
 
 ### 2. Screen Archetypes
