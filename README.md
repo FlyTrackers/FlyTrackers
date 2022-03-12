@@ -111,7 +111,7 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 
 ## Networking
 
-### List of Network Requests By 
+### List of Network Requests By Tab/View
 
 ---
 
@@ -236,15 +236,15 @@ tracking.saveInBackground { (success, error) in
 
 ---
 
-SETTINGS TAB
+#### SETTINGS TAB
 
-(Create/POST) Change user’s dark mode
+##### (Create/POST) Change user’s dark mode
 
-(Create/POST) Language setting
+##### (Create/POST) Language setting
 
-(Create/POST) Units setting
+##### (Create/POST) Units setting
 
-(Create/POST) Change profile picture
+##### (Create/POST) Change profile picture
 
 ---
 
