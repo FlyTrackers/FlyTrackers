@@ -81,7 +81,9 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
+
+<img src="https://i.imgur.com/utKR0iK.png" width=600>
+
 ### Models
 
 #### User Model
