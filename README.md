@@ -83,8 +83,169 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-[Add table of models]
-### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
+
+#### User Model
+| Property | Type | Description
+| -------- | ---- | -----------
+| userID | Int | Unique ID for user (primary key)
+| username | Str | Unique username
+| password | Str | Hashed, salted passed for user
+| profilePicture | File | User's profile picture
+| createdAt | DateTime | Time this user was added
+
+#### Flight Tracking Model
+| Property | Type | Description
+| -------- | ---- | -----------
+| objectID | Int | Unique ID for flight tracking object (primary key)
+| author | Int | Points to user who created this (foreign key)
+| trackingData | Str | Flight # for tracking
+| addedAt | DateTime | Time this tracking object was added
+
+#### Settings Table
+| Property | Type | Description
+| -------- | ---- | -----------
+| userID | Int | Points to user who these settings are for (primary/foreign key)
+| darkOrLightMode | Bool | Whether user prefers dark (True) or light (False) mode
+| units | Str | Units the user prefers
+| language | Str | Language settings this user prefers
+
+## Networking
+
+### List of Network Requests By 
+
+---
+
+#### LOGIN/REGISTER
+
+##### (Read/GET) Query for user
+
+```swift
+// Query for user object
+PFUser.logInWithUsername(inBackground: username!, password: password!) {
+    (user: PFUser?, error: Error?) -> Void in
+    switch error {
+        case .some(let error as NSError):
+        // No user found, or error on login attempt
+
+        case .none:
+        // TODO - User successfully logged in
+    }
+}
+ ```
+
+##### (Create/POST) Create a new user
+
+
+```swift
+// Query for user object
+let user = PFUser()
+user.username = usernameField.text
+user.password = password
+
+user.signUpInBackground { (success, error) in
+    switch error {
+        case .some(let error as NSError):
+            // Error on creating user, duplicate username or other
+
+        case .none:
+            // TODO: Login the user, send to feed
+    }
+}
+ ```
+---
+
+#### USER’S FLIGHTS TAB
+
+##### (Read/GET) Query for all user’s tracked flights
+```swift
+// Query for current user's trackings
+let currentUser = PFUser.current()!
+let query = PFQuery(className: "Trackers")
+query.includeKeys(["author"])
+query.whereKey("author", equalTo: currentUser)
+query.order(byDescending: "addedAt")
+
+query.findObjectsInBackground { (trackings, error) in
+    if trackings != nil {
+        // Successful retrieval of the user's flight trackings
+
+    } else if let error = error {
+        // Something went wrong
+    }
+}
+ ```
+
+##### (Delete) Delete existing tracked flight
+```swift
+// User selects an object to delete
+let objectToDelete = selectedObject as! PFObject
+
+objectToDelete.deleteInBackground { (success, error) in
+    if let error = error {
+        // Error on deletion
+
+    } else {
+        // Successful delete
+    }
+}
+ ```
+---
+
+#### SEARCH TAB
+
+##### (Read/GET) [Query API for search based on user’s request](https://www.raywenderlich.com/6587213-alamofire-5-tutorial-for-ios-getting-started#toc-anchor-005)
+
+
+```swift
+// User searches for flights
+func searchFlights(for name: String) {
+    let url = "https://api.aviationstack.com/v1/flights"
+    let access_key = "123"
+    let parameters: [String: String] = ["access_key": access_key]
+
+    AF.request(url, parameters: parameters)
+        .responseJSON { (data) in data
+        print(data)
+        // Successful retrieval of data
+    }
+}
+ ```
+
+
+##### (Create/POST) Save a search result to user’s saved flights
+
+```swift
+// User saves a flight from the search results
+let currentUser = PFUser.current()!
+let tracking = PFObject(className: "Trackings")
+let flightNumber = "123"
+        
+tracking["author"] = currentUser
+tracking["trackingData"] = flightNumber
+
+tracking.saveInBackground { (success, error) in
+    switch error {
+    case .some(let error as NSError):
+        // Error on save
+        
+    case .none:
+        // Successful save
+    }
+}
+ ```
+
+---
+
+SETTINGS TAB
+
+(Create/POST) Change user’s dark mode
+
+(Create/POST) Language setting
+
+(Create/POST) Units setting
+
+(Create/POST) Change profile picture
+
+---
+
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
