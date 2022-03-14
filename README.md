@@ -245,13 +245,61 @@ tracking.saveInBackground { (success, error) in
 #### SETTINGS TAB
 
 ##### (Create/POST) Change user’s dark mode
-
+```swift
+// Set darkmode on/off
+func darkmodeSwitch(_ sender Any) {
+    UserDefaults.standard.set(switchButton.isOn, forKey: switchKeyConstant)
+    let darkmode = PFObject(className: "Darkmode")
+    
+    if (switchButton.isOn) {
+    Settings.backgroundColor = UIColor.black;
+    Settings.textColor = UIColor.white;
+    }
+    
+    if (!switchButton.isOn) {
+    Settings.backgroundColor = UIColor.white;
+    Settings.textColor = UIColor.black;
+    }
+}
+ ```
 ##### (Create/POST) Language setting
-
+```swift
+let language = PFObject(className: "Language")
+Language["English"] = true
+Language["Other"] = false
+language.saveInBackground { (succeeded, error) in
+    if (succeeded) {
+    // set language
+}   else {
+    // show error
+    }
+}
+```
 ##### (Create/POST) Units setting
-
+```swift
+let units = PFObject(className: "Units")
+Units["Miles"] = true
+Units["Metric"] = false
+units.saveInBackground { (succeded, error) in
+    if (succeeded {
+    // set units
+}   else {
+    // show error
+    }
+}
+```
 ##### (Create/POST) Change profile picture
-
+```swift
+let Profile = PFObject(className: "Profile")
+Profile["picture"] = picture.png
+Profile.saveInBackground { (succeded, error) in
+    if (succeeded {
+    // set units
+}   else {
+    // show error
+    }
+}
+```
 ---
 
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
