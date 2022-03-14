@@ -77,10 +77,11 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 <img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/flytracker_wireframe.jpeg?raw=true" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
-![Digital Wireframes](https://github.com/FlyTrackers/FlyTrackers/blob/main/wireframe.png)
+![Digital Wireframes](wireframe.png)
 
 ### [BONUS] Interactive Prototype
-
+[Interactive Prototype](https://www.figma.com/proto/sISDbrzavME1CzvNuvnsmb/FlyTracker?page-id=0%3A1&node-id=2%3A15&viewport=241%2C48%2C0.58&scaling=scale-down&starting-point-node-id=2%3A2)
+[Video Walkthrough](protowalkthrough.gif)
 ## Schema 
 
 <img src="https://i.imgur.com/utKR0iK.png" width=600>
