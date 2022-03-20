@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB31F39D27E6E9830091DB15 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31F39C27E6E9830091DB15 /* SettingsViewController.swift */; };
+		AB31F39F27E6EA1A0091DB15 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31F39E27E6EA1A0091DB15 /* RegistrationViewController.swift */; };
+		AB361FCD27E6BD3C00A1FF56 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361FCC27E6BD3C00A1FF56 /* LoginViewController.swift */; };
+		AB361FCF27E6BEED00A1FF56 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361FCE27E6BEED00A1FF56 /* HomeViewController.swift */; };
 		AB37A1B927E17AFA00ACDD71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37A1B827E17AFA00ACDD71 /* AppDelegate.swift */; };
 		AB37A1BB27E17AFA00ACDD71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37A1BA27E17AFA00ACDD71 /* SceneDelegate.swift */; };
-		AB37A1BD27E17AFA00ACDD71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37A1BC27E17AFA00ACDD71 /* ViewController.swift */; };
 		AB37A1C027E17AFA00ACDD71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB37A1BE27E17AFA00ACDD71 /* Main.storyboard */; };
 		AB37A1C227E17AFB00ACDD71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB37A1C127E17AFB00ACDD71 /* Assets.xcassets */; };
 		AB37A1C527E17AFB00ACDD71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB37A1C327E17AFB00ACDD71 /* LaunchScreen.storyboard */; };
@@ -19,10 +22,13 @@
 /* Begin PBXFileReference section */
 		093A3C25DD2F525891B1AF80 /* Pods-FlyTrackers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyTrackers.release.xcconfig"; path = "Target Support Files/Pods-FlyTrackers/Pods-FlyTrackers.release.xcconfig"; sourceTree = "<group>"; };
 		8D797DD14B9DEF98D669345B /* Pods-FlyTrackers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyTrackers.debug.xcconfig"; path = "Target Support Files/Pods-FlyTrackers/Pods-FlyTrackers.debug.xcconfig"; sourceTree = "<group>"; };
+		AB31F39C27E6E9830091DB15 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		AB31F39E27E6EA1A0091DB15 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		AB361FCC27E6BD3C00A1FF56 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AB361FCE27E6BEED00A1FF56 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AB37A1B527E17AFA00ACDD71 /* FlyTrackers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlyTrackers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB37A1B827E17AFA00ACDD71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB37A1BA27E17AFA00ACDD71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AB37A1BC27E17AFA00ACDD71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AB37A1BF27E17AFA00ACDD71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB37A1C127E17AFB00ACDD71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB37A1C427E17AFB00ACDD71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,7 +62,6 @@
 				8D797DD14B9DEF98D669345B /* Pods-FlyTrackers.debug.xcconfig */,
 				093A3C25DD2F525891B1AF80 /* Pods-FlyTrackers.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,11 +88,14 @@
 			children = (
 				AB37A1B827E17AFA00ACDD71 /* AppDelegate.swift */,
 				AB37A1BA27E17AFA00ACDD71 /* SceneDelegate.swift */,
-				AB37A1BC27E17AFA00ACDD71 /* ViewController.swift */,
 				AB37A1BE27E17AFA00ACDD71 /* Main.storyboard */,
 				AB37A1C127E17AFB00ACDD71 /* Assets.xcassets */,
 				AB37A1C327E17AFB00ACDD71 /* LaunchScreen.storyboard */,
 				AB37A1C627E17AFB00ACDD71 /* Info.plist */,
+				AB361FCC27E6BD3C00A1FF56 /* LoginViewController.swift */,
+				AB361FCE27E6BEED00A1FF56 /* HomeViewController.swift */,
+				AB31F39C27E6E9830091DB15 /* SettingsViewController.swift */,
+				AB31F39E27E6EA1A0091DB15 /* RegistrationViewController.swift */,
 			);
 			path = FlyTrackers;
 			sourceTree = "<group>";
@@ -207,9 +215,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB37A1BD27E17AFA00ACDD71 /* ViewController.swift in Sources */,
+				AB31F39F27E6EA1A0091DB15 /* RegistrationViewController.swift in Sources */,
+				AB361FCD27E6BD3C00A1FF56 /* LoginViewController.swift in Sources */,
 				AB37A1B927E17AFA00ACDD71 /* AppDelegate.swift in Sources */,
 				AB37A1BB27E17AFA00ACDD71 /* SceneDelegate.swift in Sources */,
+				AB361FCF27E6BEED00A1FF56 /* HomeViewController.swift in Sources */,
+				AB31F39D27E6E9830091DB15 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
