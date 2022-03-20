@@ -1,17 +1,20 @@
 //
-//  HomeViewController.swift
+//  FiltersViewController.swift
 //  FlyTrackers
 //
-//  Created by Elliott Larsen on 3/19/22.
+//  Created by Elliott Larsen on 3/20/22.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
-    
-    @IBOutlet weak var airlineField: UITextField!
-    @IBOutlet weak var flightNumberField: UITextField!
-    @IBOutlet weak var flightDateField: UITextField!
+class FiltersViewController: UIViewController {
+
+    @IBOutlet weak var arriveControl: UISegmentedControl!
+    @IBOutlet weak var delayedControl: UISegmentedControl!
+    @IBOutlet weak var timeFromField: UITextField!
+    @IBOutlet weak var timeToField: UITextField!
+    @IBOutlet weak var terminalField: UITextField!
+    @IBOutlet weak var gateField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +32,5 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    @IBAction func searchButton(_ sender: Any) {
-    /*
-     Search database with the given parameters.
-     */
-    }
-    
+
 }

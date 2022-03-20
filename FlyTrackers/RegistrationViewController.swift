@@ -8,7 +8,11 @@
 import UIKit
 
 class RegistrationViewController: UIViewController {
-
+    
+    @IBOutlet weak var registerUsernameField: UITextField!
+    @IBOutlet weak var registerPasswordField: UITextField!
+    @IBOutlet weak var registerRepeatPasswordField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,4 +30,11 @@ class RegistrationViewController: UIViewController {
     }
     */
 
+    @IBAction func registerLoginButton(_ sender: Any) {
+    /*
+    Creates user profile/login.
+    */
+    }
+    
+    
 }

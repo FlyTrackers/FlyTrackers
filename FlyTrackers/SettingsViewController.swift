@@ -8,7 +8,14 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    
+    @IBOutlet weak var darkModeControl: UISegmentedControl!
+    @IBOutlet weak var changeUsernameField: UITextField!
+    @IBOutlet weak var changePasswordField: UITextField!
+    @IBOutlet weak var locationServicesControl: UISegmentedControl!
+    @IBOutlet weak var clearListControl: UISegmentedControl!
+    @IBOutlet weak var defaultSearchControl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

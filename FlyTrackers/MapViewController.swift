@@ -1,17 +1,18 @@
 //
-//  HomeViewController.swift
+//  MapViewController.swift
 //  FlyTrackers
 //
-//  Created by Elliott Larsen on 3/19/22.
+//  Created by Elliott Larsen on 3/20/22.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
-    
-    @IBOutlet weak var airlineField: UITextField!
-    @IBOutlet weak var flightNumberField: UITextField!
-    @IBOutlet weak var flightDateField: UITextField!
+class MapViewController: UIViewController {
+
+    @IBOutlet weak var ETALabel: UILabel!
+    @IBOutlet weak var arrivalLocationLabel: UILabel!
+    @IBOutlet weak var starsLabel: UILabel!
+    @IBOutlet weak var mapView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +30,5 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    @IBAction func searchButton(_ sender: Any) {
-    /*
-     Search database with the given parameters.
-     */
-    }
-    
+
 }
