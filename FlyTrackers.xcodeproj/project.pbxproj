@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16C9A60B27EA9BFF0086A4E5 /* Parse_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9A60A27EA9BFF0086A4E5 /* Parse_API.swift */; };
 		AB31F39D27E6E9830091DB15 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31F39C27E6E9830091DB15 /* SettingsViewController.swift */; };
 		AB31F39F27E6EA1A0091DB15 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31F39E27E6EA1A0091DB15 /* RegistrationViewController.swift */; };
 		AB361FCD27E6BD3C00A1FF56 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361FCC27E6BD3C00A1FF56 /* LoginViewController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		093A3C25DD2F525891B1AF80 /* Pods-FlyTrackers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyTrackers.release.xcconfig"; path = "Target Support Files/Pods-FlyTrackers/Pods-FlyTrackers.release.xcconfig"; sourceTree = "<group>"; };
+		16C9A60A27EA9BFF0086A4E5 /* Parse_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse_API.swift; sourceTree = "<group>"; };
 		8D797DD14B9DEF98D669345B /* Pods-FlyTrackers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyTrackers.debug.xcconfig"; path = "Target Support Files/Pods-FlyTrackers/Pods-FlyTrackers.debug.xcconfig"; sourceTree = "<group>"; };
 		AB31F39C27E6E9830091DB15 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AB31F39E27E6EA1A0091DB15 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		16C9A60927EA9BD60086A4E5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				16C9A60A27EA9BFF0086A4E5 /* Parse_API.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		AB37A1AC27E17AFA00ACDD71 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 		AB37A1B727E17AFA00ACDD71 /* FlyTrackers */ = {
 			isa = PBXGroup;
 			children = (
+				16C9A60927EA9BD60086A4E5 /* API */,
 				AB37A1B827E17AFA00ACDD71 /* AppDelegate.swift */,
 				AB37A1BA27E17AFA00ACDD71 /* SceneDelegate.swift */,
 				AB37A1BE27E17AFA00ACDD71 /* Main.storyboard */,
@@ -233,6 +244,7 @@
 				AB37A1B927E17AFA00ACDD71 /* AppDelegate.swift in Sources */,
 				AB37A1BB27E17AFA00ACDD71 /* SceneDelegate.swift in Sources */,
 				AB361FCF27E6BEED00A1FF56 /* HomeViewController.swift in Sources */,
+				16C9A60B27EA9BFF0086A4E5 /* Parse_API.swift in Sources */,
 				AB31F39D27E6E9830091DB15 /* SettingsViewController.swift in Sources */,
 				AB40DAEE27E7B51200055803 /* SearchResultsViewController.swift in Sources */,
 				AB40DAF027E7B55600055803 /* ResultCell.swift in Sources */,

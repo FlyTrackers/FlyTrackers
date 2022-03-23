@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Parse
 
 class LoginViewController: UIViewController {
     
@@ -14,7 +15,13 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let parseAPI = ParseAPICaller()
+        
+        parseAPI.registerNewUser(username: "Bob", password: "Bob")
+        
+        
+        //ParseAPICaller.registerNewUser(username: "Bob", password: "Bob")
+        
         // Do any additional setup after loading the view.
     }
     
