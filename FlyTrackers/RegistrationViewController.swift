@@ -48,7 +48,7 @@ class RegistrationViewController: UIViewController {
                 print("Success")
             }  // if user already exists or password and repeatPW do not match:
             else {
-                // Prevent loginSegue.
+                // Prevent loginSegue and show an error message.
                 print("Error: \(error?.localizedDescription)")
             }
         }
