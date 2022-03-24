@@ -36,24 +36,36 @@ class RegistrationViewController: UIViewController {
     /*
     Creates user profile/login.
     */
-        let user = PFUser()
-        user.username = registerUsernameField.text
-        user.password = registerPasswordField.text
+        
+        let new_user = PFUser()
+        new_user.username = registerUsernameField.text
+        new_user.password = registerPasswordField.text
         let repeatPW = registerRepeatPasswordField.text
         
-        user.signUpInBackground { (success, error) in
-            // if success and password and repeatPW match:  What constitutes success?
-            if success {
-                //self.performSegue(withIdentifier: "loginSegue", sender: nil)
-                print("Success")
-            }  // if user already exists or password and repeatPW do not match:
-            else {
-                // Prevent loginSegue and show an error message.
-                print("Error: \(error?.localizedDescription)")
-            }
+        // If the password and repeat password do not match.
+        if new_user.password != repeatPW {
+            print("Passwords do not match")
+            // Display an error message.
+            self.errorLabel.text = "Passwords do not match.\nPlease try again."
+        } else {
+            new_user.signUpInBackground{ (success, error) in
+                switch error {
+                    // If the user name is already taken, display an error message.
+                    case .some(let error as NSError):
+                        print(error.localizedDescription)
+                    self.errorLabel.text = "This username is already taken.\nPlease try again."
+
+                    case .none:
+                        print("Success")
+                        self.errorLabel.text = "Registration Successful.\nTaking you to the Home screen."
+                        // Waits 2 sencds before performSegue.
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                            self.performSegue(withIdentifier: "loginSegue", sender: self)
+                        })
+                    //self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                    }
+                }
         }
-        
-    }
-    
-    
+}
+
 }
