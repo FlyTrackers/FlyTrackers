@@ -26,7 +26,7 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 
 **Required Must-have Stories**
 
-[x] User logs in to access the list of planes they're tracking, as well as settings
+- [x] User logs in to access the list of planes they're tracking, as well as settings
 [x] User can choose any additional planes to add based on set criteria
 [x] User can see specific aircraft statistics (i.e. how many 737-800's there are heading to Miami)
 [x] User can see map of current flight location
