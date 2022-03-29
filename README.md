@@ -26,52 +26,53 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 
 **Required Must-have Stories**
 
-* User logs in to access the list of planes they're tracking, as well as settings
-* User can choose any additional planes to add based on set criteria
-* User can see specific aircraft statistics (i.e. how many 737-800's there are heading to Miami)
-* Settings (Accessibility, Notifications, General, Dark Mode, Units, etc)
+[x] User logs in to access the list of planes they're tracking, as well as settings
+[x] User can choose any additional planes to add based on set criteria
+[x] User can see specific aircraft statistics (i.e. how many 737-800's there are heading to Miami)
+[x] User can see map of current flight location
+[] Settings (Accessibility, Notifications, General, Dark Mode, Units, etc)
 
 **Optional Nice-to-have Stories**
-* Logs of previous flights that were tracked
-* Additional statistics based on the user (i.e. Map plot showing their travel history?)
-* Random picker of a plane or flight
-* Public feed to post interesting data
-* Profile Picture
-* Chat log with other people following a specific flight? 
+[] Logs of previous flights that were tracked
+[] Additional statistics based on the user (i.e. Map plot showing their travel history?)
+[] Random picker of a plane or flight
+[] Public feed to post interesting data
+[] Profile Picture
+[] Chat log with other people following a specific flight? 
 
 ### 2. Screen Archetypes
 
-* Login
-* Register - User can sign up for an account
-   * The user can choose to create a new account, or login in with a previously made account
-   * Once logged in, user heads to their main tab view where they can see a list of their tracked flights or planes
-* User can see list of their tracked planes or flight
-   * After logging in, user sees a list of their flight or planes.
-   * User can choose to modify their selected planes
-* User can search for a flight or plane based on a set of filters
-   * If user finds a plane/flight of interest, can add it to their tracked list
-* User can change their personal settings
-* [OPTIONAL] User can view a public feed with flights/planes of interest
+[x] Login
+[x] Register - User can sign up for an account
+   [x] The user can choose to create a new account, or login in with a previously made account
+   [x] Once logged in, user heads to their main tab view where they can see a list of their tracked flights or planes
+[] User can see list of their tracked planes or flight
+   [] After logging in, user sees a list of their flight or planes.
+   [] User can choose to modify their selected planes
+[] User can search for a flight or plane based on a set of filters
+   [] If user finds a plane/flight of interest, can add it to their tracked list
+[] User can change their personal settings
+[] [OPTIONAL] User can view a public feed with flights/planes of interest
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* User's plane/flight list
-* Search tab
-* Profile/Settings Tab
+[x] User's plane/flight list
+[x] Search tab
+[x] Profile/Settings Tab
 
 [OPTIONAL] 
-* Public feed tab
-* Randomized plane/flight suggestion tab
+[] Public feed tab
+[] Randomized plane/flight suggestion tab
 
 **Flow Navigation** (Screen to Screen)
 
-* User is logged in or allowed to register
-* User gets sent to tracked list -> these can be modified or deleted
-* User clicks on item in tracked list -> additional details about flight are revealed
-* User can search and add to their tracked list, given a wide variety of filters -> list shows only items meeting filter criteria
-* Profile/Settings -> users can modify their account or app settings or toggle dark mode
+[x] User is logged in or allowed to register
+[] User gets sent to tracked list -> these can be modified or deleted
+[] User clicks on item in tracked list -> additional details about flight are revealed
+[] User can search and add to their tracked list, given a wide variety of filters -> list shows only items meeting filter criteria
+[] Profile/Settings -> users can modify their account or app settings or toggle dark mode
 
 ## Wireframes
 <img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/flytracker_wireframe.jpeg?raw=true" width=600>
