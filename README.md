@@ -76,12 +76,12 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 
 ## GIF Walkthrough
 <p>Login, Registration, Search, Filter, Settings</p>
-<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/sprint%201-2%20progress.gif?raw=true" width=600>
+<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/sprint%201-2%20progress.gif?raw=true" width=300>
 <p>Map View Flight Details Page</p>
-<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/map%20view%20progress.gif?raw=true" width=600>
+<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/map%20view%20progress.gif?raw=true" width=300>
 
 ## Wireframes
-<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/flytracker_wireframe.jpeg?raw=true" width=600>
+<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/flytracker_wireframe.jpeg?raw=true" width=300>
 
 ### [BONUS] Digital Wireframes & Mockups
 ![Digital Wireframes](wireframe.png)
@@ -93,7 +93,7 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 
 ## Schema 
 
-<img src="https://i.imgur.com/utKR0iK.png" width=600>
+<img src="https://i.imgur.com/utKR0iK.png" width=300>
 
 ### Models
 
