@@ -93,7 +93,7 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 
 ## Schema 
 
-<img src="https://i.imgur.com/utKR0iK.png" width=300>
+<img src="https://i.imgur.com/utKR0iK.png" width=800>
 
 ### Models
 
