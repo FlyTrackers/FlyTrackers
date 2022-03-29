@@ -74,6 +74,12 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 - [ ] User can search and add to their tracked list, given a wide variety of filters -> list shows only items meeting filter criteria
 - [ ] Profile/Settings -> users can modify their account or app settings or toggle dark mode
 
+## GIF Walkthrough
+<p>Login, Registration, Search, Filter, Settings</p>
+<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/sprint%201-2%20progress.gif?raw=true" width=600>
+<p>Map View Flight Details Page</p>
+<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/map%20view%20progress.gif?raw=true" width=600>
+
 ## Wireframes
 <img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/flytracker_wireframe.jpeg?raw=true" width=600>
 
