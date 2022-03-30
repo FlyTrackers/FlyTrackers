@@ -6,18 +6,37 @@
 //
 
 import UIKit
+import MapKit
 
 class MapViewController: UIViewController {
+    
+    struct Flight {
+        var name: String
+        var latitude: CLLocationDegrees
+        var longitude: CLLocationDegrees
+    }
 
     @IBOutlet weak var ETALabel: UILabel!
     @IBOutlet weak var arrivalLocationLabel: UILabel!
     @IBOutlet weak var starsLabel: UILabel!
-    @IBOutlet weak var mapView: UIImageView!
+    @IBOutlet weak var mapView: MKMapView!
+    
+    let flights =
+    [Flight(name: "JFK", latitude: 40.641766, longitude: -73.780968),
+    Flight(name: "LAX", latitude: 33.942791, longitude: -118.410042)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        placeFlightsOnMap(flights)
+    }
+    
+    func placeFlightsOnMap(_ flight_list: [Flight]) {
+        for flight in flight_list{
+            let annotations = MKPointAnnotation()
+            annotations.title = flight.name
+            annotations.coordinate = CLLocationCoordinate2D(latitude: flight.latitude, longitude: flight.longitude)
+            mapView.addAnnotation(annotations)
+        }
     }
     
 
