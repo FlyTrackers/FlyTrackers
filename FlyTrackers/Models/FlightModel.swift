@@ -12,8 +12,10 @@ struct Flight {
     
     // Properties of Flight object
     var flightNumberICAO: String
+    var flightNumber: String
     var airline: String
     var flightStatus: String
+    var flightDate: String
     
     var departureAirportICAO: String
     var departureAirport: String
@@ -30,9 +32,11 @@ struct Flight {
     // --- Initializer for Flight ---
     init(flight: JSON) {
         // General Properties
-        flightNumberICAO = flight["flight"]["icao"].string ?? "N/A"
-        airline = flight["airline"]["name"].string ?? "N/A"
-        flightStatus = flight["flight_status"].string ?? "N/A"
+        flightNumberICAO = flight["flight"]["icao"].string ?? ""
+        flightNumber = flight["flight"]["number"].string ?? ""
+        airline = flight["airline"]["name"].string ?? ""
+        flightStatus = flight["flight_status"].string ?? ""
+        flightDate = flight["flight_date"].string ?? ""
         
         // Departure Properties
         departureAirportICAO = flight["departure"]["ICAO"].string ?? "N/A"

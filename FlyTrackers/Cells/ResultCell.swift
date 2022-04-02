@@ -20,8 +20,9 @@ class ResultCell: UITableViewCell {
             flightNumberLabel.text = flight.flightNumberICAO
             ETALabel.text = flight.getTimeToArrival()
         }
-        
+
     }
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
