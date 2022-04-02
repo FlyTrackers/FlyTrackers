@@ -59,6 +59,7 @@ class SearchResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
         let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=92eac302688758c89b558139206b9eb2")!
 
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
@@ -95,6 +96,7 @@ class SearchResultsViewController: UIViewController {
              }
         }
         task.resume()
+         */
 /*------testing of weather api with nested array dictionary
  guard let url = URL(string: "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22") else {
      fatalError("incorrect URL")

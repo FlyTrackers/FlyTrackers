@@ -281,6 +281,13 @@
                                     <action selector="searchButton:" destination="Fdt-u3-Jys" eventType="touchUpInside" id="3tS-Je-wei"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ra-bX-Gfx">
+                                <rect key="frame" x="60" y="582" width="294" height="137"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.2841566801" green="0.39540901779999998" blue="0.44736123090000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="krr-0f-Vnj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -288,6 +295,7 @@
                     <navigationItem key="navigationItem" title="Home/Search" id="hFQ-zO-coq"/>
                     <connections>
                         <outlet property="airlineField" destination="7d0-bH-Xd9" id="wkf-HB-VFy"/>
+                        <outlet property="errorLabel" destination="2ra-bX-Gfx" id="KO1-QJ-q2s"/>
                         <outlet property="flightDateField" destination="PwI-6Y-vph" id="nCC-vK-h9B"/>
                         <outlet property="flightNumberField" destination="7Dw-A6-9dw" id="0N0-Hl-7Xm"/>
                     </connections>
