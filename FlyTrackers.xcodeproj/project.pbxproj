@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		16C9A60B27EA9BFF0086A4E5 /* Parse_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9A60A27EA9BFF0086A4E5 /* Parse_API.swift */; };
+		9E16C03D27F607C5002F63F4 /* search_TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E16C03C27F607C5002F63F4 /* search_TableViewController.swift */; };
 		AB31F39D27E6E9830091DB15 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31F39C27E6E9830091DB15 /* SettingsViewController.swift */; };
 		AB31F39F27E6EA1A0091DB15 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31F39E27E6EA1A0091DB15 /* RegistrationViewController.swift */; };
 		AB361FCD27E6BD3C00A1FF56 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361FCC27E6BD3C00A1FF56 /* LoginViewController.swift */; };
@@ -28,6 +29,7 @@
 		093A3C25DD2F525891B1AF80 /* Pods-FlyTrackers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyTrackers.release.xcconfig"; path = "Target Support Files/Pods-FlyTrackers/Pods-FlyTrackers.release.xcconfig"; sourceTree = "<group>"; };
 		16C9A60A27EA9BFF0086A4E5 /* Parse_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse_API.swift; sourceTree = "<group>"; };
 		8D797DD14B9DEF98D669345B /* Pods-FlyTrackers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyTrackers.debug.xcconfig"; path = "Target Support Files/Pods-FlyTrackers/Pods-FlyTrackers.debug.xcconfig"; sourceTree = "<group>"; };
+		9E16C03C27F607C5002F63F4 /* search_TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = search_TableViewController.swift; sourceTree = "<group>"; };
 		AB31F39C27E6E9830091DB15 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AB31F39E27E6EA1A0091DB15 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		AB361FCC27E6BD3C00A1FF56 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				AB40DAEB27E7B3FE00055803 /* MapViewController.swift */,
 				AB40DAED27E7B51200055803 /* SearchResultsViewController.swift */,
 				AB40DAEF27E7B55600055803 /* ResultCell.swift */,
+				9E16C03C27F607C5002F63F4 /* search_TableViewController.swift */,
 			);
 			path = FlyTrackers;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				AB31F39D27E6E9830091DB15 /* SettingsViewController.swift in Sources */,
 				AB40DAEE27E7B51200055803 /* SearchResultsViewController.swift in Sources */,
 				AB40DAF027E7B55600055803 /* ResultCell.swift in Sources */,
+				9E16C03D27F607C5002F63F4 /* search_TableViewController.swift in Sources */,
 				AB40DAEC27E7B3FE00055803 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
