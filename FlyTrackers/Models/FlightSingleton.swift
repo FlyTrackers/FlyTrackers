@@ -2,7 +2,7 @@
 //  FlightSingleton.swift
 //  FlyTrackers
 //
-//  Created by Giovanni Propersi on 4/2/22.
+//  Created by Elliott Larsen, Charles Xu, Gio Propersi, Kent Chau, Christian Franklin on 3/19/22.
 //
 
 import Foundation

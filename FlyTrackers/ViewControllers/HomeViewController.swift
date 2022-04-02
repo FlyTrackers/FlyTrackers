@@ -74,6 +74,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
                         self.getOnlyInputRequestedData()
                         
                         // Send to results tab
+
                         self.tabBarController?.selectedIndex = 1
                         
                     } catch {
