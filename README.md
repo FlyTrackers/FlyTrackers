@@ -46,10 +46,10 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 - [x] Register - User can sign up for an account
    - [x] The user can choose to create a new account, or login in with a previously made account
    - [x] Once logged in, user heads to their main tab view where they can see a list of their tracked flights or planes
-- [ ] User can see list of their tracked planes or flight
-   - [ ] After logging in, user sees a list of their flight or planes.
-   - [ ] User can choose to modify their selected planes
-- [ ] User can search for a flight or plane based on a set of filters
+- [x] User can see list of their tracked planes or flight
+   - [x] After logging in, user sees a list of their flight or planes.
+   - [x] User can choose to modify their selected planes
+- [x] User can search for a flight or plane based on a set of filters
    - [ ] If user finds a plane/flight of interest, can add it to their tracked list
 - [ ] User can change their personal settings
 - [ ] [OPTIONAL] User can view a public feed with flights/planes of interest
@@ -70,7 +70,7 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 
 - [x] User is logged in or allowed to register
 - [ ] User gets sent to tracked list -> these can be modified or deleted
-- [ ] User clicks on item in tracked list -> additional details about flight are revealed
+- [x] User clicks on item in tracked list -> additional details about flight are revealed
 - [ ] User can search and add to their tracked list, given a wide variety of filters -> list shows only items meeting filter criteria
 - [ ] Profile/Settings -> users can modify their account or app settings or toggle dark mode
 
