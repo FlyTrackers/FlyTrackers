@@ -84,7 +84,6 @@
 		1649887727F7DFBB009D2169 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1649887827F7DFD8009D2169 /* example_call.swift */,
 				1649887A27F7E3D1009D2169 /* FlightModel.swift */,
 			);
 			path = Models;
@@ -93,6 +92,7 @@
 		16C9A60927EA9BD60086A4E5 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				1649887827F7DFD8009D2169 /* example_call.swift */,
 				16C9A60A27EA9BFF0086A4E5 /* Parse_API.swift */,
 			);
 			path = API;

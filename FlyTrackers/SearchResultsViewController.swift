@@ -9,14 +9,18 @@ import UIKit
 import SwiftyJSON
 
 
-class SearchResultsViewController: UIViewController {
+class SearchResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
+    @IBOutlet weak var flightTableView: UITableView!
     var flights = [Flight]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=92eac302688758c89b558139206b9eb2")!
+        flightTableView.delegate = self
+        flightTableView.dataSource = self
+        
+        let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=0050e361b45995535dbbe37f1e4d1516")!
 
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
@@ -32,7 +36,8 @@ class SearchResultsViewController: UIViewController {
                              let flightData = Flight.init(flight: flight)
                              self.flights.append(flightData)
                          }
-                         
+                         self.flightTableView.rowHeight = UITableView.automaticDimension
+                         self.flightTableView.reloadData()
                          //* MARK: Reload cells here
 
                      } catch {
@@ -54,5 +59,16 @@ class SearchResultsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    // MARK: - Table protocol functions
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return flights.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell") as! ResultCell
+        
+        cell.flight = flights[indexPath.row]
+        return cell
+    }
 
 }

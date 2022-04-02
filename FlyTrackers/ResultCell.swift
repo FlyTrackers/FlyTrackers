@@ -14,6 +14,15 @@ class ResultCell: UITableViewCell {
     @IBOutlet weak var flightNumberLabel: UILabel!
     @IBOutlet weak var ETALabel: UILabel!
     
+    var flight: Flight! {
+        didSet {
+            airlineLabel.text = flight.airline
+            flightNumberLabel.text = flight.flightNumberICAO
+            ETALabel.text = flight.getTimeToArrival()
+        }
+        
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
