@@ -40,6 +40,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
                          self.flightTableView.reloadData()
                          //* MARK: Reload cells here
 
+
                      } catch {
                          // Couldn't read in the JSON data correctly
                          print("Error reading JSON")
@@ -47,6 +48,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
              }
         }
         task.resume()
+
     }
     
 
