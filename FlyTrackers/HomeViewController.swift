@@ -41,7 +41,7 @@ class HomeViewController: UIViewController {
         let inputFlightDate = flightDateField.text
         
 
-        let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=c2d55483a3720f7e0c461ea64c0544c6")!
+        let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=0050e361b45995535dbbe37f1e4d1516")!
 
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
