@@ -42,6 +42,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     // TODO: EXTRACT json file content and store in these two variables
     let departure_location = CLLocation(latitude: 40.641766, longitude: -73.780968)
     let arrival_location = CLLocation(latitude: 33.942791, longitude: -118.410042)
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +58,8 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             annotations.title = flight.name
             annotations.coordinate = CLLocationCoordinate2D(latitude: flight.latitude, longitude: flight.longitude)
             mapView.addAnnotation(annotations)
+            setMKAnnotation(location: annotations.coordinate)
+
         }
     }
     
@@ -77,6 +81,25 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         renderer.strokeColor = UIColor.blue
         
         return renderer
+    }
+    
+    func setMKAnnotation(location: CLLocationCoordinate2D) {
+        let annotation = MKPointAnnotation()
+        annotation.title = "Plane"
+        mapView.addAnnotation(annotation)
+        self.planeAnnotation = annotation
+    }
+    
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let planeIdentifier = "Plane"
+        
+        let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: planeIdentifier)
+                ?? MKAnnotationView(annotation: annotation, reuseIdentifier: planeIdentifier)
+        
+        annotationView.image = UIImage(named: "airplane")
+
+        return annotationView
     }
     
     
