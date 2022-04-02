@@ -34,6 +34,13 @@ class HomeViewController: UIViewController {
     /*
      Search database with the given parameters.
      */
+        let airline = airlineField.text
+        let flightNumber = flightNumberField.text
+        let flightDate = flightDateField.text
+        
+        print(airline)
+        print(flightNumber)
+        print(flightDate)
     }
     
 }

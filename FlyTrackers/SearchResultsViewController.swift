@@ -72,13 +72,24 @@ class SearchResultsViewController: UIViewController {
                     
                  self.flights = dataDictionary["data"] as! [[String: Any]]
 
-                    // TODO: Get the array of movies
-                    // TODO: Store the movies in a property to use elsewhere
-                    // TODO: Reload your table view data
-//                 print(dataDictionary)
-                 
+                 //print(dataDictionary)
+                 self.flights = dataDictionary["data"] as! [[String:Any]]
+                 //print(self.flights.count)
+                 for index in 1...self.flights.endIndex - 1{
+                     let airline = self.flights[index]["airline"] as! [String:Any]
+                     let printAirline = airline["name"] as? String
+                     
+                     if printAirline == "Air France"{
+                         let flight = self.flights[index]["flight"] as! [String:Any]
+                         let printFlight = flight["number"] as? String
+                         print(printFlight)
+                     }
+                 }
+                 //let airline = self.flights[1]["airline"] as! [String:Any]
+                 //let printAirline = airline["name"] as! String
+                 //print(printAirline)
                  //---atempt to output flight name
-                 print(self.flights[0]["airline"]["name"])
+                 //print(self.flights[0]["airline"]["name"])
                  
                  
              }
