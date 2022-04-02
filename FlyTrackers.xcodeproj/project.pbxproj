@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1649887927F7DFD8009D2169 /* example_call.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1649887827F7DFD8009D2169 /* example_call.swift */; };
+		1649887B27F7E3D1009D2169 /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1649887A27F7E3D1009D2169 /* FlightModel.swift */; };
+		1649887D27F8BCEC009D2169 /* FlightSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1649887C27F8BCEC009D2169 /* FlightSingleton.swift */; };
 		16C9A60B27EA9BFF0086A4E5 /* Parse_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9A60A27EA9BFF0086A4E5 /* Parse_API.swift */; };
 		AB31F39D27E6E9830091DB15 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31F39C27E6E9830091DB15 /* SettingsViewController.swift */; };
 		AB31F39F27E6EA1A0091DB15 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31F39E27E6EA1A0091DB15 /* RegistrationViewController.swift */; };
@@ -26,6 +29,9 @@
 
 /* Begin PBXFileReference section */
 		093A3C25DD2F525891B1AF80 /* Pods-FlyTrackers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyTrackers.release.xcconfig"; path = "Target Support Files/Pods-FlyTrackers/Pods-FlyTrackers.release.xcconfig"; sourceTree = "<group>"; };
+		1649887827F7DFD8009D2169 /* example_call.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example_call.swift; sourceTree = "<group>"; };
+		1649887A27F7E3D1009D2169 /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
+		1649887C27F8BCEC009D2169 /* FlightSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSingleton.swift; sourceTree = "<group>"; };
 		16C9A60A27EA9BFF0086A4E5 /* Parse_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse_API.swift; sourceTree = "<group>"; };
 		8D797DD14B9DEF98D669345B /* Pods-FlyTrackers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyTrackers.debug.xcconfig"; path = "Target Support Files/Pods-FlyTrackers/Pods-FlyTrackers.debug.xcconfig"; sourceTree = "<group>"; };
 		AB31F39C27E6E9830091DB15 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -75,9 +81,41 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		1649887727F7DFBB009D2169 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1649887A27F7E3D1009D2169 /* FlightModel.swift */,
+				1649887C27F8BCEC009D2169 /* FlightSingleton.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1649887E27F8C1B5009D2169 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB361FCC27E6BD3C00A1FF56 /* LoginViewController.swift */,
+				AB361FCE27E6BEED00A1FF56 /* HomeViewController.swift */,
+				AB31F39C27E6E9830091DB15 /* SettingsViewController.swift */,
+				AB31F39E27E6EA1A0091DB15 /* RegistrationViewController.swift */,
+				AB40DAE927E7AE6400055803 /* FiltersViewController.swift */,
+				AB40DAEB27E7B3FE00055803 /* MapViewController.swift */,
+				AB40DAED27E7B51200055803 /* SearchResultsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1649887F27F8C1C6009D2169 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AB40DAEF27E7B55600055803 /* ResultCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		16C9A60927EA9BD60086A4E5 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				1649887827F7DFD8009D2169 /* example_call.swift */,
 				16C9A60A27EA9BFF0086A4E5 /* Parse_API.swift */,
 			);
 			path = API;
@@ -104,6 +142,9 @@
 		AB37A1B727E17AFA00ACDD71 /* FlyTrackers */ = {
 			isa = PBXGroup;
 			children = (
+				1649887F27F8C1C6009D2169 /* Cells */,
+				1649887E27F8C1B5009D2169 /* ViewControllers */,
+				1649887727F7DFBB009D2169 /* Models */,
 				16C9A60927EA9BD60086A4E5 /* API */,
 				AB37A1B827E17AFA00ACDD71 /* AppDelegate.swift */,
 				AB37A1BA27E17AFA00ACDD71 /* SceneDelegate.swift */,
@@ -111,14 +152,6 @@
 				AB37A1C127E17AFB00ACDD71 /* Assets.xcassets */,
 				AB37A1C327E17AFB00ACDD71 /* LaunchScreen.storyboard */,
 				AB37A1C627E17AFB00ACDD71 /* Info.plist */,
-				AB361FCC27E6BD3C00A1FF56 /* LoginViewController.swift */,
-				AB361FCE27E6BEED00A1FF56 /* HomeViewController.swift */,
-				AB31F39C27E6E9830091DB15 /* SettingsViewController.swift */,
-				AB31F39E27E6EA1A0091DB15 /* RegistrationViewController.swift */,
-				AB40DAE927E7AE6400055803 /* FiltersViewController.swift */,
-				AB40DAEB27E7B3FE00055803 /* MapViewController.swift */,
-				AB40DAED27E7B51200055803 /* SearchResultsViewController.swift */,
-				AB40DAEF27E7B55600055803 /* ResultCell.swift */,
 			);
 			path = FlyTrackers;
 			sourceTree = "<group>";
@@ -241,6 +274,7 @@
 				AB31F39F27E6EA1A0091DB15 /* RegistrationViewController.swift in Sources */,
 				AB361FCD27E6BD3C00A1FF56 /* LoginViewController.swift in Sources */,
 				AB40DAEA27E7AE6400055803 /* FiltersViewController.swift in Sources */,
+				1649887927F7DFD8009D2169 /* example_call.swift in Sources */,
 				AB37A1B927E17AFA00ACDD71 /* AppDelegate.swift in Sources */,
 				AB37A1BB27E17AFA00ACDD71 /* SceneDelegate.swift in Sources */,
 				AB361FCF27E6BEED00A1FF56 /* HomeViewController.swift in Sources */,
@@ -249,6 +283,8 @@
 				AB40DAEE27E7B51200055803 /* SearchResultsViewController.swift in Sources */,
 				AB40DAF027E7B55600055803 /* ResultCell.swift in Sources */,
 				AB40DAEC27E7B3FE00055803 /* MapViewController.swift in Sources */,
+				1649887D27F8BCEC009D2169 /* FlightSingleton.swift in Sources */,
+				1649887B27F7E3D1009D2169 /* FlightModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

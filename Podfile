@@ -8,5 +8,6 @@ target 'FlyTrackers' do
   # Pods for FlyTrackers
   pod 'Parse'
   pod 'AlamofireImage'
+  pod 'SwiftyJSON', '~> 4.0'
 
 end
