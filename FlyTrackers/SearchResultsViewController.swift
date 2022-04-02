@@ -6,61 +6,21 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-/* ---- testing with weather api that has nested array dictionary
-struct Weather: Decodable {
-    let main: String
-    let description: String
-    let icon: String
-    
-}
-struct WeatherResponse: Decodable { //one container info
-    var temperature: Double = 0
-    var humidity: Double = 0
-    var pressure: Double = 0
-    //add element/prperty for that weather container
-    var weather: [Weather] = [Weather]()
-    
-    private enum WeatherResponseKeys: String, CodingKey {
-        case main
-        //add map to weather key from json
-        case weather
-    }
-    
-    private enum MainKeys: String, CodingKey {
-        case temperature = "temp"
-        case humidity
-        case pressure
-    }
-    
-    init(from decoder: Decoder) throws {
-        if let weatherResponseContainer = try? decoder.container(keyedBy: WeatherResponseKeys.self) {
-            if let mainContainer = try? weatherResponseContainer.nestedContainer(keyedBy: MainKeys.self, forKey: .main) {
-                self.temperature = try mainContainer.decode(Double.self, forKey: .temperature)
-                self.humidity = try mainContainer.decode(Double.self, forKey: .humidity)
-                self.pressure = try mainContainer.decode(Double.self, forKey: .pressure)
-            }
-            //in weather response function
-            //decode the weather array from json
-            //into the weather structure
-//            self.weather = try weatherResponseContainer.decode([Weather].self, forKey: WeatherResponseKeys.weather)
-            self.weather = try weatherResponseContainer.decode([Weather].self, forKey: WeatherResponseKeys.weather)
-        }
-    }
-    
-}
-........................*/
 
-class SearchResultsViewController: UIViewController {
+class SearchResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
-    var flights = [[String:Any]]()
+    @IBOutlet weak var flightTableView: UITableView!
+    var flights = [Flight]()
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*
-        let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=92eac302688758c89b558139206b9eb2")!
+        flightTableView.delegate = self
+        flightTableView.dataSource = self
+        
+        let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=0050e361b45995535dbbe37f1e4d1516")!
 
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
@@ -69,54 +29,26 @@ class SearchResultsViewController: UIViewController {
              if let error = error {
                     print(error.localizedDescription)
              } else if let data = data {
-                    let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                    
-                 self.flights = dataDictionary["data"] as! [[String: Any]]
+                     do {
+                         let dataDictionary = try JSON(data: data)
+                         for singleFlight in dataDictionary["data"] {
+                             let flight = singleFlight.1
+                             let flightData = Flight.init(flight: flight)
+                             self.flights.append(flightData)
+                         }
+                         self.flightTableView.rowHeight = UITableView.automaticDimension
+                         self.flightTableView.reloadData()
+                         //* MARK: Reload cells here
 
-                 //print(dataDictionary)
-                 self.flights = dataDictionary["data"] as! [[String:Any]]
-                 //print(self.flights.count)
-                 for index in 1...self.flights.endIndex - 1{
-                     let airline = self.flights[index]["airline"] as! [String:Any]
-                     let printAirline = airline["name"] as? String
-                     
-                     if printAirline == "Air France"{
-                         let flight = self.flights[index]["flight"] as! [String:Any]
-                         let printFlight = flight["number"] as? String
-                         print(printFlight)
+
+                     } catch {
+                         // Couldn't read in the JSON data correctly
+                         print("Error reading JSON")
                      }
-                 }
-                 //let airline = self.flights[1]["airline"] as! [String:Any]
-                 //let printAirline = airline["name"] as! String
-                 //print(printAirline)
-                 //---atempt to output flight name
-                 //print(self.flights[0]["airline"]["name"])
-                 
-                 
              }
         }
         task.resume()
-         */
-/*------testing of weather api with nested array dictionary
- guard let url = URL(string: "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22") else {
-     fatalError("incorrect URL")
- }
-//        guard let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=92eac302688758c89b558139206b9eb2") else {
-//            fatalError("incorrect URL")
-//        }
- 
-        URLSession.shared.dataTask(with: url) {data, _ , _ in
-            if let data = data {
-                let weatherResponse = try? JSONDecoder().decode(WeatherResponse.self, from: data)
-                if let weatherResponse = weatherResponse {
-                    print(weatherResponse)
-                    print(weatherResponse.weather[0])
-                    //assign globals here
-                }
-            }
-        }.resume()
-....................................................*/
-       
+
     }
     
 
@@ -129,5 +61,16 @@ class SearchResultsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    // MARK: - Table protocol functions
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return flights.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell") as! ResultCell
+        
+        cell.flight = flights[indexPath.row]
+        return cell
+    }
 
 }
