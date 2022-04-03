@@ -39,7 +39,7 @@ struct Flight {
         flightDate = flight["flight_date"].string ?? ""
         
         // Departure Properties
-        departureAirportICAO = flight["departure"]["ICAO"].string ?? "N/A"
+        departureAirportICAO = flight["departure"]["icao"].string ?? "N/A"
         departureAirport = flight["departure"]["airport"].string ?? "N/A"
         departureDelay = flight["departure"]["delay"].int ?? 0              // Minutes
         departureTime = flight["departure"]["scheduled"].string ?? "N/A"
