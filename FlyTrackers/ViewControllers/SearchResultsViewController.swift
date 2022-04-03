@@ -48,15 +48,25 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
             self.flightTableView.reloadData()
         }
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        print("Loading Map View screen")
+        
+        // Find flight from search results
+        let cell = sender as! UITableViewCell
+        let indexPath = flightTableView.indexPath(for: cell)!
+        let flight = flights[indexPath.row]
+        
+        // Pass flight to Map View
+        let mapViewController = segue.destination as! MapViewController
+        mapViewController.flight = flight
+
+        
     }
-    */
+
     // MARK: - Table protocol functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return flights.count
