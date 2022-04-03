@@ -12,6 +12,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var airlineLabel: UILabel!
     @IBOutlet weak var flightLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var ETALabel: UILabel!
     @IBOutlet weak var delayLabel: UILabel!
     @IBOutlet weak var departureLocationLabel: UILabel!
@@ -30,18 +31,38 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 //    // TODO: EXTRACT json file content and store in these two variables
 //    let departure_location = CLLocation(latitude: 40.641766, longitude: -73.780968)
 //    let arrival_location = CLLocation(latitude: 33.942791, longitude: -118.410042)
-//
-//
-//
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Below is the flight row data")
-        print(flight)
+        print(flight as Any)
         print(type(of: flight))
         print("Here is the departureAirport:")
         print(flight.departureAirport)
         print("Here is the arrivalAirport:")
         print(flight.arrivalAirport)
+        
+        let flightDate = flight.arrivalTime
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        let date = dateFormatter.date(from: flightDate) ?? Date()
+        let dateString = dateFormatter.string(from: date)
+        
+        airlineLabel.text = flight.airline
+        flightLabel.text = flight.flightNumber
+        statusLabel.text = flight.flightStatus
+        ETALabel.text = dateString
+        delayLabel.text = String(flight.departureDelay + flight.arrivalDelay) + " min"
+        departureLocationLabel.text = flight.departureAirport
+        arrivalLocationLabel.text = flight.arrivalAirport
+        
+        
+        
+        
 //        mapView.delegate = self
 //        placeFlightsOnMap(flights)
 //        drawRouteOnMap(departure: departure_location, arrival: arrival_location)
