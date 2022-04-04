@@ -81,7 +81,7 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 <img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/mapView%20Final%20Version.gif?raw=true" width=300>
 
 ## Wireframes
-<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/flytracker_wireframe.jpeg?raw=true" width=300>
+<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/flytracker_wireframe.jpeg?raw=true" width=800>
 
 ### [BONUS] Digital Wireframes & Mockups
 ![Digital Wireframes](wireframe.png)
