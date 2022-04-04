@@ -11,6 +11,7 @@
 		1649887B27F7E3D1009D2169 /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1649887A27F7E3D1009D2169 /* FlightModel.swift */; };
 		1649887D27F8BCEC009D2169 /* FlightSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1649887C27F8BCEC009D2169 /* FlightSingleton.swift */; };
 		16C9A60B27EA9BFF0086A4E5 /* Parse_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9A60A27EA9BFF0086A4E5 /* Parse_API.swift */; };
+		562980BD27FABE78000750F2 /* airports.json in Resources */ = {isa = PBXBuildFile; fileRef = 562980BC27FABE78000750F2 /* airports.json */; };
 		AB31F39D27E6E9830091DB15 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31F39C27E6E9830091DB15 /* SettingsViewController.swift */; };
 		AB31F39F27E6EA1A0091DB15 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31F39E27E6EA1A0091DB15 /* RegistrationViewController.swift */; };
 		AB361FCD27E6BD3C00A1FF56 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB361FCC27E6BD3C00A1FF56 /* LoginViewController.swift */; };
@@ -33,6 +34,7 @@
 		1649887A27F7E3D1009D2169 /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
 		1649887C27F8BCEC009D2169 /* FlightSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSingleton.swift; sourceTree = "<group>"; };
 		16C9A60A27EA9BFF0086A4E5 /* Parse_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse_API.swift; sourceTree = "<group>"; };
+		562980BC27FABE78000750F2 /* airports.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports.json; sourceTree = SOURCE_ROOT; };
 		8D797DD14B9DEF98D669345B /* Pods-FlyTrackers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyTrackers.debug.xcconfig"; path = "Target Support Files/Pods-FlyTrackers/Pods-FlyTrackers.debug.xcconfig"; sourceTree = "<group>"; };
 		AB31F39C27E6E9830091DB15 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AB31F39E27E6EA1A0091DB15 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		AB37A1B727E17AFA00ACDD71 /* FlyTrackers */ = {
 			isa = PBXGroup;
 			children = (
+				562980BC27FABE78000750F2 /* airports.json */,
 				1649887F27F8C1C6009D2169 /* Cells */,
 				1649887E27F8C1B5009D2169 /* ViewControllers */,
 				1649887727F7DFBB009D2169 /* Models */,
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB37A1C527E17AFB00ACDD71 /* LaunchScreen.storyboard in Resources */,
+				562980BD27FABE78000750F2 /* airports.json in Resources */,
 				AB37A1C227E17AFB00ACDD71 /* Assets.xcassets in Resources */,
 				AB37A1C027E17AFA00ACDD71 /* Main.storyboard in Resources */,
 			);
