@@ -76,7 +76,7 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 
 ## GIF Walkthrough
 <p>Login, Registration, Search, Filter, Settings</p>
-<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/sprint%201-2%20progress.gif?raw=true" width=300>
+<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/final%20walkthrough.gif?raw=true" width=300>
 <p>Map View Flight Details Page</p>
 <img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/mapView%20Final%20Version.gif?raw=true" width=300>
 
