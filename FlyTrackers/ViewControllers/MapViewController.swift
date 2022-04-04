@@ -54,7 +54,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         [Path(name: flight.departureAirport, coordinates: departureAirportCoord),
          Path(name: flight.arrivalAirport, coordinates: arrivalAirportCoord)]
         
-        print("HERE ARE THE PATHHSHSHSHSHS")
+        print("HERE ARE THE PATHS:")
         print(paths)
         
         mapView.delegate = self
@@ -156,6 +156,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             mapView.addAnnotation(annotations)
             setMKAnnotation(location: annotations.coordinate)
         }
+        
         mapView.showAnnotations(annotationList, animated: true)
     }
     
@@ -165,16 +166,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
          mapView.addOverlay(geodesicPolyline)
     }
 
-    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        guard let polyline = overlay as? MKPolyline else {
-            return MKOverlayRenderer()
-        }
-        let renderer = MKPolylineRenderer(polyline: polyline)
-        renderer.lineWidth = 5.0
-        renderer.alpha = 0.5
-        renderer.strokeColor = UIColor.blue
-        return renderer
-    }
 
     func setMKAnnotation(location: CLLocationCoordinate2D) {
         let annotation = MKPointAnnotation()
@@ -183,13 +174,27 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         self.planeAnnotation = annotation
     }
 
-
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    // display annotation pins
+    // NOTE: MKMARKERANNOTATIONVIEW displays pins whereas MKAnnotationView does not...
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKMarkerAnnotationView! {
         let planeIdentifier = "Plane"
+        mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: planeIdentifier)
         let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: planeIdentifier)
-                ?? MKAnnotationView(annotation: annotation, reuseIdentifier: planeIdentifier)
+                ?? MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: planeIdentifier)
         annotationView.image = UIImage(named: "airplane")
-        return annotationView
+        return annotationView as? MKMarkerAnnotationView
+    }
+    
+    // display poly line
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        guard let polyline = overlay as? MKPolyline else {
+            return MKOverlayRenderer()
+        }
+        let renderer = MKPolylineRenderer(polyline: polyline)
+        renderer.lineWidth = 5.0
+        renderer.alpha = 0.5
+        renderer.strokeColor = UIColor.systemBlue
+        return renderer
     }
 
 }
