@@ -46,10 +46,10 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 - [x] Register - User can sign up for an account
    - [x] The user can choose to create a new account, or login in with a previously made account
    - [x] Once logged in, user heads to their main tab view where they can see a list of their tracked flights or planes
-- [ ] User can see list of their tracked planes or flight
-   - [ ] After logging in, user sees a list of their flight or planes.
-   - [ ] User can choose to modify their selected planes
-- [ ] User can search for a flight or plane based on a set of filters
+- [x] User can see list of their tracked planes or flight
+   - [x] After logging in, user sees a list of their flight or planes.
+   - [x] User can choose to modify their selected planes
+- [x] User can search for a flight or plane based on a set of filters
    - [ ] If user finds a plane/flight of interest, can add it to their tracked list
 - [ ] User can change their personal settings
 - [ ] [OPTIONAL] User can view a public feed with flights/planes of interest
@@ -70,18 +70,18 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 
 - [x] User is logged in or allowed to register
 - [ ] User gets sent to tracked list -> these can be modified or deleted
-- [ ] User clicks on item in tracked list -> additional details about flight are revealed
+- [x] User clicks on item in tracked list -> additional details about flight are revealed
 - [ ] User can search and add to their tracked list, given a wide variety of filters -> list shows only items meeting filter criteria
 - [ ] Profile/Settings -> users can modify their account or app settings or toggle dark mode
 
 ## GIF Walkthrough
 <p>Login, Registration, Search, Filter, Settings</p>
-<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/sprint%201-2%20progress.gif?raw=true" width=300>
+<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/final%20walkthrough.gif?raw=true" width=300>
 <p>Map View Flight Details Page</p>
-<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/map%20view%20progress.gif?raw=true" width=300>
+<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/mapView%20Final%20Version.gif?raw=true" width=300>
 
 ## Wireframes
-<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/flytracker_wireframe.jpeg?raw=true" width=300>
+<img src="https://github.com/FlyTrackers/FlyTrackers/blob/main/flytracker_wireframe.jpeg?raw=true" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 ![Digital Wireframes](wireframe.png)
@@ -89,7 +89,8 @@ Tracks a plane given a plane tail number, flight number, or other identifiable i
 ### [BONUS] Interactive Prototype
 [Interactive Prototype](https://www.figma.com/proto/sISDbrzavME1CzvNuvnsmb/FlyTracker?page-id=0%3A1&node-id=2%3A15&viewport=241%2C48%2C0.58&scaling=scale-down&starting-point-node-id=2%3A2)
 
-![Video Walkthrough](protowalkthrough.gif)
+<img src="protowalkthrough.gif" width=300>
+
 
 ## Schema 
 

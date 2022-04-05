@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  FlyTrackers
 //
-//  Created by Elliott Larsen on 3/19/22.
+//  Created by Elliott Larsen & Christian Franklin on 3/19/22.
 //
 
 import UIKit

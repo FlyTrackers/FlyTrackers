@@ -2,7 +2,7 @@
 //  Flight.swift
 //  FlyTrackers
 //
-//  Created by Giovanni Propersi on 4/1/22.
+//  Created by Elliott Larsen, Charles Xu, Gio Propersi, Kent Chau, Christian Franklin on 3/19/22.
 //
 
 import Foundation
@@ -21,11 +21,15 @@ struct Flight {
     var departureAirport: String
     var departureDelay: Int
     var departureTime: String
+    var departureGate: String
+    var departureTerminal: String
     
     var arrivalAirportICAO: String
     var arrivalAirport: String
     var arrivalDelay: Int
     var arrivalTime: String
+    var arrivalGate: String
+    var arrivalTerminal: String
     
     var liveData: JSON?
 
@@ -43,12 +47,16 @@ struct Flight {
         departureAirport = flight["departure"]["airport"].string ?? "N/A"
         departureDelay = flight["departure"]["delay"].int ?? 0              // Minutes
         departureTime = flight["departure"]["scheduled"].string ?? "N/A"
+        departureGate = flight["departure"]["gate"].string ?? "N/A"
+        departureTerminal = flight["departure"]["terminal"].string ?? "N/A"
         
         // Arrival Properties
         arrivalAirportICAO = flight["arrival"]["icao"].string ?? "N/A"
         arrivalAirport = flight["arrival"]["airport"].string ?? "N/A"
         arrivalDelay = flight["arrival"]["delay"].int ?? 0                  // Minutes
         arrivalTime = flight["arrival"]["scheduled"].string ?? "N/A"
+        arrivalGate = flight["arrival"]["gate"].string ?? "N/A"
+        arrivalTerminal = flight["arrival"]["terminal"].string ?? "N/A"
         
         if flight["live"] == JSON.null {
             liveData = JSON.null
