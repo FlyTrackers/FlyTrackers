@@ -64,6 +64,31 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
     }
     
+    func updatePlanePosition() {
+        let step = 5
+        guard planeAnnotationPosition + step < flightpathPolyline.pointCount
+            else { return }
+
+        let points = flightpathPolyline.points()
+        self.planeAnnotationPosition += step
+        let nextMapPoint = points[planeAnnotationPosition]
+        
+        self.planeAnnotation.coordinate = nextMapPoint.coordinate
+        
+        perform("updatePlanePosition", with: nil, afterDelay: 0.03)
+    }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        let planeIdentifier = "Plane"
+        
+        let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: planeIdentifier)
+                ?? MKAnnotationView(annotation: annotation, reuseIdentifier: planeIdentifier)
+        
+        annotationView.image = UIImage(named: "airplane")
+
+        return annotationView
+    }
+    
     private func updateLabels(){
         let flightDate = flight.arrivalTime
         let dateFormatter = DateFormatter()
