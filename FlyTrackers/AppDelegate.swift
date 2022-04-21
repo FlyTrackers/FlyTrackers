@@ -17,20 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // UserDefaults isn't secure, figure out KeyChain.
         // This stores the ClientKey and APIKey in UserDefaults.... no good since can be easily accessed
         let defaults = UserDefaults.standard
-        if let _ = defaults.string(forKey: "APIKey") {
-            print("Already loaded APIKey")
-        } else {
+        
+        if defaults.string(forKey: "APIKey") == nil {
             defaults.set(ProcessInfo.processInfo.environment["APP_ID"]!, forKey: "APIKey")
         }
         
-        if let _ = defaults.string(forKey: "ClientKey") {
-            print("Already loaded client key")
-        } else {
+        if defaults.string(forKey: "ClientKey") == nil {
             defaults.set(ProcessInfo.processInfo.environment["CLIENT_KEY"]!, forKey: "ClientKey")
+            
         }
-        
+        defaults.synchronize()
         let apiKey = defaults.string(forKey: "APIKey")
         let clientKey = defaults.string(forKey: "ClientKey")
+        
 
         // Parse Connection
         let parseConfig = ParseClientConfiguration {
@@ -39,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             $0.server = "https://parseapi.back4app.com"
         }
         print(parseConfig.applicationId!)
+        print(parseConfig.clientKey!)
         
         Parse.initialize(with: parseConfig)
         
