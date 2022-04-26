@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Foundation
+import Parse
+import SwiftyJSON
 
 class ResultCell: UITableViewCell {
     
@@ -25,7 +28,6 @@ class ResultCell: UITableViewCell {
 
     }
 
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -36,6 +38,7 @@ class ResultCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
     @IBAction func favoriteFlight(_ sender: Any) {
         let toBeFavorited = !favorited
         if (toBeFavorited) {
@@ -49,6 +52,16 @@ class ResultCell: UITableViewCell {
         favorited = isFavorited
         if (favorited) {
             favButton.setImage(UIImage(named:"Favorited"), for: UIControl.State.normal)
+
+            let parseAPI = ParseAPICaller()
+            parseAPI.saveFlightData(user: PFUser.current()!,  flightData: [flight], completion: { result in
+                 switch result {
+                 case .success(_):
+                        print("Favorite successful")
+                 case .failure(_):
+                        print("Favorite unsuccessful")
+                 }
+             })
         } else {
             favButton.setImage(UIImage(named:"Results"), for: UIControl.State.normal)
         }
