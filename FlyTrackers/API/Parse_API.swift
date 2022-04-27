@@ -15,6 +15,11 @@ class ParseAPICaller {
                     NSLocalizedDescriptionKey :  NSLocalizedString("Invalid Settings Field", value: "Invalid setting column header given. Please use valid, case-sensitive setting column headers.", comment: "") ,
             ]
     
+    let usernameExists: [String : Any] =
+                [
+                    NSLocalizedDescriptionKey :  NSLocalizedString("Username Already Exists", value: "Username already exists. Please choose another.", comment: "") ,
+            ]
+    
     // MARK:  - Register New User
     
     func registerNewUser(username: String, password: String, completion: @escaping (Result<Bool, NSError>) -> ()) {
@@ -89,6 +94,57 @@ class ParseAPICaller {
     ///     parseAPI.setDefaultSettins(user: PFUser.current(), completion: { result in
     ///         switch result {
     ///             case .success(let dataSaved):
+    ///                 ---HANDLE SUCCESS HERE---
+    ///             case .failure(let error):
+    ///                 ---HANDLE FAILURE HERE---
+    ///         }
+    ///     })
+    ///
+    
+    // MARK: - Change a User's Username
+    
+    /**
+        Changes the user's username.
+     
+        - Parameter userToChange: The current user - this user's settings are being changed
+        - Parameter newUsername: A string containing the new username to change to
+     
+        - Raises errors, either if username already taken, or if Parse returns an error
+     */
+    func changeUsername(userToChange: PFUser, newUsername: String, completion: @escaping (Result<Bool, NSError>) -> ()) {
+        
+        let userSettingsQuery = PFUser.query()!
+        userSettingsQuery.whereKey("username", equalTo: newUsername)
+        userSettingsQuery.getFirstObjectInBackground() {(userWithUsername, error)  in
+            
+            if let error = error {
+                let errorCode = (error as NSError).code
+                
+                switch errorCode {
+                case 101:
+                    // 101 Code indicates a user object has not been found with that username
+                    userToChange.username = newUsername
+                    userToChange.saveInBackground()
+                    completion(.success(true))
+                
+                default:
+                    completion(.failure(error as NSError))
+                }
+            } else {
+                // Indicates a user object already has that username
+                let error = NSError(domain: "usernameExists", code: 137, userInfo: self.usernameExists)
+                completion(.failure(error as NSError))
+            }
+        }
+    }
+    
+    /// Example parse call for settings a user's default settings
+    ///     let parseAPI = ParseAPICaller()
+    ///     let newUsername = changeUsernameField.text
+    ///
+    ///     parseAPI.changeUsername(user: PFUser.current()!, newUsername: newUsername completion: { result in
+    ///         switch result {
+    ///             case .success(let success):
     ///                 ---HANDLE SUCCESS HERE---
     ///             case .failure(let error):
     ///                 ---HANDLE FAILURE HERE---
