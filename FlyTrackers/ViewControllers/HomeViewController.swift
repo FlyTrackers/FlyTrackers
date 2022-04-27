@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftyJSON
+import Parse
 
 class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
@@ -14,7 +15,6 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     @IBOutlet weak var airlineField: UITextField!
     @IBOutlet weak var flightNumberField: UITextField!
     @IBOutlet weak var flightDateField: UITextField!
-    //var flights = [[String:Any]]()
     
     var flights = [Flight]()
     var flightsForDisplay = [Flight]()
@@ -26,7 +26,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.tabBarController?.delegate = self
         // Do any additional setup after loading the view.
     }
@@ -54,7 +54,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         self.flights.removeAll()
         
         // Call API
-        let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=858cfecb9f5cdce2182ca3161261dfb2")!
+        let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=92c9f0a9411fa073792716e24c75dc00")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in

@@ -54,7 +54,7 @@ class ResultCell: UITableViewCell {
             favButton.setImage(UIImage(named:"Favorited"), for: UIControl.State.normal)
 
             let parseAPI = ParseAPICaller()
-            parseAPI.saveFlightData(user: PFUser.current()!,  flightData: [flight], completion: { result in
+            parseAPI.saveFlightData(user: PFUser.current()!,  flightData: flight, completion: { result in
                  switch result {
                  case .success(_):
                         print("Favorite successful")
