@@ -2,7 +2,7 @@
 //  MapViewController.swift
 //  FlyTrackers
 //
-//  Created by Elliott Larsen on 3/20/22.
+//  Created by Charles Xu on 3/20/22.
 //
 
 import UIKit
@@ -60,16 +60,19 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     // schema for flight path (to be plotted)
     struct Path {
-         var name: String!
+        var name: String!
         var coordinates: CLLocationCoordinate2D!
     }
 
     // VIEW DID LOAD function
     override func viewDidLoad() {
+        
+        print("----- STARTING MAP VIEW FUNCTIONS -----")
+        
         super.viewDidLoad()
         
         print("Below is the flight row data")
-        print(flight as Any)
+        print(flight as Flight? as Any)
         
         updateLabels() // display up-to-date data on map screen
         parseJSON() // extract coordinate data from local airports JSON
