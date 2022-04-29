@@ -14,7 +14,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     @IBOutlet weak var airlineField: UITextField!
     @IBOutlet weak var flightNumberField: UITextField!
     @IBOutlet weak var flightDateField: UITextField!
-    //var flights = [[String:Any]]()
+    @IBOutlet weak var testSlider: UIDatePicker!
     
     var flights = [Flight]()
     var flightsForDisplay = [Flight]()
@@ -23,15 +23,34 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     var inputFlightDate: String = ""
     var userInput = [String: String]()
     
+    var searchPopup: UIAlertController!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Create new alert for indicating successful change
+        searchPopup = UIAlertController(title: "Status", message : "", preferredStyle: .alert)
+
+        // Create OK button with action handler
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in return})
+        
+        //Add OK button to a dialog message
+        searchPopup.addAction(ok)
 
         self.tabBarController?.delegate = self
         // Do any additional setup after loading the view.
+
     }
     
-
+//    override func viewWillLayoutSubviews() {
+//        super.viewWillLayoutSubviews()
+//
+//        if let testSlider = testSlider.subviews.first?.subviews.first {
+//            // Force the date picker to be centered
+//            testSlider.center.x = testSlider.subviews.first!.center.x
+//        }
+//    }
     
     @IBAction func searchButton(_ sender: Any) {
     // Get API data for 100 flights
@@ -40,9 +59,12 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         inputFlightNumber = flightNumberField.text ?? ""
         inputFlightDate = flightDateField.text ?? ""
         
+        print(testSlider.date)
+        
         // No inputs, pass error
         if (inputAirline == "" && inputFlightNumber == "" && inputFlightDate == ""){
-            self.errorLabel.text = "Please enter at least one search term."
+            self.searchPopup.message = "Please enter at least one search term."
+            self.present(self.searchPopup, animated: true, completion: nil)
             return
         }
         
@@ -53,38 +75,43 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         Flights.sharedInstance.array.removeAll()
         self.flights.removeAll()
         
-        // Call API
-        let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=92c9f0a9411fa073792716e24c75dc00")!
-        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-        let task = session.dataTask(with: request) { (data, response, error) in
-             // This will run when the network request returns
-            if let error = error {
-                   print(error.localizedDescription)
-            } else if let data = data {
-                    do {
-                        let dataDictionary = try JSON(data: data)
-                        for singleFlight in dataDictionary["data"] {
-                            let flight = singleFlight.1
-                            let flightData = Flight.init(flight: flight)
-                            self.flights.append(flightData)
-                        }
-                        
-                        // Filter out the data based on search options
-                        self.getOnlyInputRequestedData()
-                        
-                        // Send to results tab
-
-                        self.tabBarController?.selectedIndex = 1
-                        
-                    } catch {
-                        // Couldn't read in the JSON data correctly
-                        self.errorLabel.text = "Error reading JSON"
-                        return
-                    }
-            }
-       }
-       task.resume()
+        
+        
+//        // Call API
+//        let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=92c9f0a9411fa073792716e24c75dc00")!
+//        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+//        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+//        let task = session.dataTask(with: request) { (data, response, error) in
+//             // This will run when the network request returns
+//            if let error = error {
+//                self.searchPopup.message = "Error: \(error.localizedDescription)"
+//                self.present(self.searchPopup, animated: true, completion: nil)
+//                return
+//            } else if let data = data {
+//                    do {
+//                        let dataDictionary = try JSON(data: data)
+//                        for singleFlight in dataDictionary["data"] {
+//                            let flight = singleFlight.1
+//                            let flightData = Flight.init(flight: flight)
+//                            self.flights.append(flightData)
+//                        }
+//
+//                        // Filter out the data based on search options
+//                        self.getOnlyInputRequestedData()
+//
+//                        // Send to results tab
+//
+//                        self.tabBarController?.selectedIndex = 1
+//
+//                    } catch {
+//                        // Couldn't read in the JSON data correctly
+//                        self.searchPopup.message = "Error reading aviationstack API JSON results."
+//                        self.present(self.searchPopup, animated: true, completion: nil)
+//                        return
+//                    }
+//            }
+//       }
+//       task.resume()
     }
             
     func getOnlyInputRequestedData() {
