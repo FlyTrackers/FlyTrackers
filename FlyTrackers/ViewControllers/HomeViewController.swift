@@ -77,7 +77,6 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
                         for singleFlight in dataDictionary["data"] {
                             let flight = singleFlight.1
                             let flightData = Flight.init(flight: flight)
-                            print(flightData)
                             self.flights.append(flightData)
                         }
                         
