@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftyJSON
+import Lottie
 
 class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
@@ -21,6 +22,8 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     var userInput = [String: String]()
     
     var searchPopup: UIAlertController!
+    
+    var animationView: AnimationView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +48,8 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
 
     }
     
+// MARK: - IBActions, API Call
+    
     @IBAction func searchButton(_ sender: Any) {
     // Get API data for 100 flights
         
@@ -60,6 +65,9 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         // Clear the singleton and local array since using a new search
         Flights.sharedInstance.array.removeAll()
         self.flights.removeAll()
+        
+        // Start animation
+        startAnimation()
         
         // Call API
         let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=92c9f0a9411fa073792716e24c75dc00")!
@@ -79,12 +87,15 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
                             let flightData = Flight.init(flight: flight)
                             self.flights.append(flightData)
                         }
-                        
+
                         // Filter out the data based on search options
                         self.getOnlyInputRequestedData()
                         
+                        self.stopAnimation()
+                        
                         // If empty, tell user the search produced nothing
                         if Flights.sharedInstance.array.isEmpty {
+                            
                             self.searchPopup.message = "No flights to display."
                             self.present(self.searchPopup, animated: true, completion: nil)
                             return
@@ -95,6 +106,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
 
                     } catch {
                         // Couldn't read in the JSON data correctly
+                        self.stopAnimation()
                         self.searchPopup.message = "Error reading aviationstack API JSON results."
                         self.present(self.searchPopup, animated: true, completion: nil)
                         return
@@ -103,8 +115,10 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
        }
        task.resume()
     }
-            
-    func getOnlyInputRequestedData() {
+
+// MARK: - Functions for filtering API response data
+    
+    private func getOnlyInputRequestedData() {
         // Filter out the flights based on the user input
         
         userInput = [
@@ -122,7 +136,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         }
     }
     
-    func doesFlightMatchInput(singleFlight: Flight) -> Bool {
+    private func doesFlightMatchInput(singleFlight: Flight) -> Bool {
         // Check if the flight matches the input data
         
         var doesMatch: Bool = true
@@ -149,6 +163,20 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         return doesMatch
     }
     
+    
+// MARK: - Functions for animations
+    private func startAnimation() {
+        animationView?.isHidden = false
+        animationView = .init(name: "plane_flying_loading2")
+        animationView?.frame = view.bounds
+        view.addSubview(animationView!)
+        animationView?.play()
+    }
+    
+    private func stopAnimation() {
+        animationView?.stop()
+        animationView?.isHidden = true
+    }
 }
 
 

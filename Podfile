@@ -9,5 +9,6 @@ target 'FlyTrackers' do
   pod 'Parse'
   pod 'AlamofireImage'
   pod 'SwiftyJSON', '~> 4.0'
+  pod 'lottie-ios'
 
 end
