@@ -34,19 +34,10 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if Flights.sharedInstance.array.isEmpty {
-            // User tried to access tab without running the API first, disable Filter segue
-            self.searchError.message = "No Data to Show"
-            self.present(self.searchError, animated: true, completion: nil)
-            self.navigationController?.navigationBar.topItem?.rightBarButtonItem?.isEnabled = false
-        } else {
-            
-            // User had a successful API request, enable Filter segue as well
-            self.navigationController?.navigationBar.topItem?.rightBarButtonItem?.isEnabled = true
-            self.flights.removeAll()
-            self.flights = Flights.sharedInstance.array
-            self.flightTableView.reloadData()
-        }
+        // User had a successful API request, reload table and cells
+        self.flights.removeAll()
+        self.flights = Flights.sharedInstance.array
+        self.flightTableView.reloadData()
     }
     
     // MARK: - Navigation

@@ -347,8 +347,8 @@
                     <navigationItem key="navigationItem" title="Home/Search" id="hFQ-zO-coq"/>
                     <connections>
                         <outlet property="airlineField" destination="7d0-bH-Xd9" id="wkf-HB-VFy"/>
+                        <outlet property="dateWheel" destination="uFc-CF-GKp" id="NRu-i9-nt5"/>
                         <outlet property="flightNumberField" destination="7Dw-A6-9dw" id="0N0-Hl-7Xm"/>
-                        <outlet property="testSlider" destination="uFc-CF-GKp" id="HdE-Ff-7IC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NGo-pC-PPN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
