@@ -43,15 +43,6 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
 
     }
     
-//    override func viewWillLayoutSubviews() {
-//        super.viewWillLayoutSubviews()
-//
-//        if let testSlider = testSlider.subviews.first?.subviews.first {
-//            // Force the date picker to be centered
-//            testSlider.center.x = testSlider.subviews.first!.center.x
-//        }
-//    }
-    
     @IBAction func searchButton(_ sender: Any) {
     // Get API data for 100 flights
         
