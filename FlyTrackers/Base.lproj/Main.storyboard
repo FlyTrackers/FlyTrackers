@@ -322,12 +322,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate Us!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMa-sj-EyJ">
-                                <rect key="frame" x="170" y="503" width="74" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" axis="vertical" alignment="top" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="6LH-Oj-lne">
                                 <rect key="frame" x="45" y="116" width="324" height="342"/>
                                 <subviews>
@@ -424,15 +418,25 @@
                                     <constraint firstItem="0BW-ZZ-CZr" firstAttribute="leading" secondItem="6LH-Oj-lne" secondAttribute="leading" id="wYY-vW-MO7"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQW-9b-eS7">
+                                <rect key="frame" x="158" y="528" width="98" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Rate Us!">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="4F3-6F-USx" kind="presentation" identifier="rateUs" id="2jS-0U-fYd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rPm-mD-a5l"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6LH-Oj-lne" firstAttribute="leading" secondItem="rPm-mD-a5l" secondAttribute="leading" constant="45" id="Ei5-es-ofG"/>
-                            <constraint firstItem="JMa-sj-EyJ" firstAttribute="centerX" secondItem="s7b-57-6dL" secondAttribute="centerX" id="Mi1-cp-LYI"/>
                             <constraint firstItem="rPm-mD-a5l" firstAttribute="trailing" secondItem="6LH-Oj-lne" secondAttribute="trailing" constant="45" id="exb-bU-nAZ"/>
                             <constraint firstItem="6LH-Oj-lne" firstAttribute="top" secondItem="rPm-mD-a5l" secondAttribute="top" constant="60" id="kuY-9q-LsE"/>
-                            <constraint firstItem="JMa-sj-EyJ" firstAttribute="top" secondItem="6LH-Oj-lne" secondAttribute="bottom" constant="45" id="rgI-P2-iGK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="zVQ-S9-Z9n"/>
@@ -446,6 +450,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dX6-Vg-JXW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4357.971014492754" y="1249.5535714285713"/>
+        </scene>
+        <!--Rate Us View Controller-->
+        <scene sceneID="O2g-le-JWX">
+            <objects>
+                <viewController id="4F3-6F-USx" customClass="RateUsViewController" customModule="FlyTrackers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DS2-zk-Cdf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8S-uR-ovy" userLabel="ratingMessageLabel">
+                                <rect key="frame" x="53" y="91" width="309" height="286"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="I8S-uR-ovy" secondAttribute="height" multiplier="309:286" id="J8G-uq-dr1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.2841566801" green="0.39540901779999998" blue="0.44736123090000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caG-mL-3aI">
+                                <rect key="frame" x="126" y="490" width="162" height="38"/>
+                                <color key="backgroundColor" red="0.2841566801" green="0.39540901779999998" blue="0.44736123090000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="caG-mL-3aI" secondAttribute="height" multiplier="81:19" id="a0s-pU-Qt7"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Take Me Back">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                    <color key="baseForegroundColor" red="0.93654197449999999" green="0.91819912199999998" blue="0.89244681599999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="takeMeBackButton:" destination="4F3-6F-USx" eventType="touchUpInside" id="l5J-xo-vhd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Dyb-m3-7am"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="I8S-uR-ovy" firstAttribute="leading" secondItem="Dyb-m3-7am" secondAttribute="leading" constant="53" id="0Cc-FS-Pz7"/>
+                            <constraint firstItem="Dyb-m3-7am" firstAttribute="trailing" secondItem="caG-mL-3aI" secondAttribute="trailing" constant="126" id="3YR-o6-2g1"/>
+                            <constraint firstItem="caG-mL-3aI" firstAttribute="top" secondItem="I8S-uR-ovy" secondAttribute="bottom" constant="113" id="3a1-UV-n7u"/>
+                            <constraint firstItem="caG-mL-3aI" firstAttribute="leading" secondItem="Dyb-m3-7am" secondAttribute="leading" constant="126" id="4DL-nv-3Lr"/>
+                            <constraint firstItem="Dyb-m3-7am" firstAttribute="trailing" secondItem="I8S-uR-ovy" secondAttribute="trailing" constant="52" id="PeV-GV-stX"/>
+                            <constraint firstItem="caG-mL-3aI" firstAttribute="top" secondItem="I8S-uR-ovy" secondAttribute="bottom" constant="113" id="csq-3k-2rJ"/>
+                            <constraint firstItem="I8S-uR-ovy" firstAttribute="top" secondItem="Dyb-m3-7am" secondAttribute="top" constant="47" id="uO6-rZ-V6v"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ratingMessageLabel" destination="I8S-uR-ovy" id="eP3-RS-fTf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KhN-ns-apA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5253.6231884057979" y="1249.5535714285713"/>
         </scene>
         <!--Search Results-->
         <scene sceneID="QhH-lS-XRK">

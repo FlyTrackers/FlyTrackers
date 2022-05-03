@@ -25,6 +25,7 @@
 		AB40DAEC27E7B3FE00055803 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB40DAEB27E7B3FE00055803 /* MapViewController.swift */; };
 		AB40DAEE27E7B51200055803 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB40DAED27E7B51200055803 /* SearchResultsViewController.swift */; };
 		AB40DAF027E7B55600055803 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB40DAEF27E7B55600055803 /* ResultCell.swift */; };
+		AB9412642820C89F0045D6BB /* RateUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9412632820C89F0045D6BB /* RateUsViewController.swift */; };
 		CEDA1E10CFB0D1D0E7493BB2 /* Pods_FlyTrackers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B654FCD3DAA6E23AFDCCCC /* Pods_FlyTrackers.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		AB40DAEB27E7B3FE00055803 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AB40DAED27E7B51200055803 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		AB40DAEF27E7B55600055803 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
+		AB9412632820C89F0045D6BB /* RateUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsViewController.swift; sourceTree = "<group>"; };
 		C6B654FCD3DAA6E23AFDCCCC /* Pods_FlyTrackers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyTrackers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 				AB40DAE927E7AE6400055803 /* FiltersViewController.swift */,
 				AB40DAEB27E7B3FE00055803 /* MapViewController.swift */,
 				AB40DAED27E7B51200055803 /* SearchResultsViewController.swift */,
+				AB9412632820C89F0045D6BB /* RateUsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				16C9A60B27EA9BFF0086A4E5 /* Parse_API.swift in Sources */,
 				AB31F39D27E6E9830091DB15 /* SettingsViewController.swift in Sources */,
 				AB40DAEE27E7B51200055803 /* SearchResultsViewController.swift in Sources */,
+				AB9412642820C89F0045D6BB /* RateUsViewController.swift in Sources */,
 				AB40DAF027E7B55600055803 /* ResultCell.swift in Sources */,
 				AB40DAEC27E7B3FE00055803 /* MapViewController.swift in Sources */,
 				1649887D27F8BCEC009D2169 /* FlightSingleton.swift in Sources */,
