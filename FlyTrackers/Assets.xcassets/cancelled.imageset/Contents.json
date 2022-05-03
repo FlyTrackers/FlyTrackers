@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "schedules.png",
+      "filename" : "cancelled.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "schedules-1.png",
+      "filename" : "cancelled-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "schedules-2.png",
+      "filename" : "cancelled-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

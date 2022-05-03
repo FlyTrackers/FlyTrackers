@@ -54,7 +54,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         self.flights.removeAll()
         
         // Call API
-        let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=92c9f0a9411fa073792716e24c75dc00")!
+        let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=1f5b9049373e816968e08176b33c3022")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in

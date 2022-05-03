@@ -155,20 +155,22 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: planeIdentifier)
                 ?? MKAnnotationView(annotation: annotation, reuseIdentifier: planeIdentifier)
-        
+                
         print("THIS IS THE SUBTITLE FOR THE ANNOTATION")
         print(annotation.subtitle!!)
         
-        if annotation.subtitle == "departure_annotation" {
-            annotationView.image = UIImage(named: "scheduled.png")
-        } else {
-            annotationView.image = UIImage(named: "landed.png")
-        }
-            
-//        if flight.flightStatus == "scheduled"{
+        annotationView.image = UIImage(named: "pin.png")
+        
+//        if annotation.subtitle == "departure_annotation" {
 //            annotationView.image = UIImage(named: "scheduled.png")
+//        } else {
+//            annotationView.image = UIImage(named: "landed.png")
+//        }
+//
+//        if flight.flightStatus == "scheduled"{
+//            annotationView.image = UIImage(named: "active.png")
 //        } else if flight.flightStatus == "active" {
-//            annotationView.image = UIImage(named: "airplane.png")
+//            annotationView.image = UIImage(named: "active.png")
 //        } else if flight.flightStatus == "landed" {
 //            annotationView.image = UIImage(named: "landed.png")
 //        } else if flight.flightStatus == "cancelled" {
@@ -181,19 +183,19 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 //            annotationView.image = UIImage(named: "error.png")
 //        }
         
-        annotationView.transform = mapView.transform.rotated(by: CGFloat(degreesToRadians(degrees: 0)))
+//        annotationView.transform = mapView.transform.rotated(by: CGFloat(degreesToRadians(degrees: 0)))
         
         return annotationView
     }
     
     
-    // set the plane annotation pin
-    //    func setMKAnnotation(location: CLLocationCoordinate2D) {
-    //        let annotation = MKPointAnnotation()
-    //        annotation.title = "Plane"
-    //        mapView.addAnnotation(annotation)
-    //        self.planeAnnotation = annotation
-    //    }
+//     set the plane annotation pin
+//        func setMKAnnotation(location: CLLocationCoordinate2D) {
+//            let annotation = MKPointAnnotation()
+//            annotation.title = "Plane"
+//            mapView.addAnnotation(annotation)
+//            self.planeAnnotation = annotation
+//        }
     
     // display plane pin on map
     //    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
