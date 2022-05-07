@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05EFA89C2826D59900707A99 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EFA89B2826D59900707A99 /* FavoritesViewController.swift */; };
+		05EFA8A02826EBDD00707A99 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EFA89F2826EBDD00707A99 /* FavoriteCell.swift */; };
 		1649887927F7DFD8009D2169 /* example_call.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1649887827F7DFD8009D2169 /* example_call.swift */; };
 		1649887B27F7E3D1009D2169 /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1649887A27F7E3D1009D2169 /* FlightModel.swift */; };
 		1649887D27F8BCEC009D2169 /* FlightSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1649887C27F8BCEC009D2169 /* FlightSingleton.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05EFA89B2826D59900707A99 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		05EFA89F2826EBDD00707A99 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		093A3C25DD2F525891B1AF80 /* Pods-FlyTrackers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyTrackers.release.xcconfig"; path = "Target Support Files/Pods-FlyTrackers/Pods-FlyTrackers.release.xcconfig"; sourceTree = "<group>"; };
 		1649887827F7DFD8009D2169 /* example_call.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example_call.swift; sourceTree = "<group>"; };
 		1649887A27F7E3D1009D2169 /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 				AB40DAE927E7AE6400055803 /* FiltersViewController.swift */,
 				AB40DAEB27E7B3FE00055803 /* MapViewController.swift */,
 				AB40DAED27E7B51200055803 /* SearchResultsViewController.swift */,
+				05EFA89B2826D59900707A99 /* FavoritesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -110,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				AB40DAEF27E7B55600055803 /* ResultCell.swift */,
+				05EFA89F2826EBDD00707A99 /* FavoriteCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -288,6 +294,8 @@
 				AB40DAF027E7B55600055803 /* ResultCell.swift in Sources */,
 				AB40DAEC27E7B3FE00055803 /* MapViewController.swift in Sources */,
 				1649887D27F8BCEC009D2169 /* FlightSingleton.swift in Sources */,
+				05EFA8A02826EBDD00707A99 /* FavoriteCell.swift in Sources */,
+				05EFA89C2826D59900707A99 /* FavoritesViewController.swift in Sources */,
 				1649887B27F7E3D1009D2169 /* FlightModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
