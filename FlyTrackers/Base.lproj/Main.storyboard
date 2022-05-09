@@ -535,7 +535,7 @@
                                             <outlet property="airlineLabel" destination="IR4-RY-Ksg" id="Din-I3-beD"/>
                                             <outlet property="flightNumberLabel" destination="Bhp-oZ-ous" id="3eL-cC-Jpd"/>
                                             <outlet property="flightView" destination="iFH-nc-cMH" id="XNZ-5k-vCc"/>
-                                            <segue destination="li4-iE-1hC" kind="show" id="ewk-i2-tML"/>
+                                            <segue destination="li4-iE-1hC" kind="show" identifier="mapSegue" id="v2R-bC-fSI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -553,7 +553,7 @@
                     <navigationItem key="navigationItem" title="Search Results" id="PTJ-Cc-IFH">
                         <barButtonItem key="rightBarButtonItem" title="Filters" id="MJS-tP-BmN">
                             <connections>
-                                <segue destination="FlN-fG-JIY" kind="show" id="aTF-VK-Gej"/>
+                                <segue destination="FlN-fG-JIY" kind="show" identifier="filterSegue" id="XiJ-t3-j97"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
