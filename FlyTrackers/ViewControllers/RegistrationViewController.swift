@@ -13,24 +13,23 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var registerUsernameField: UITextField!
     @IBOutlet weak var registerPasswordField: UITextField!
     @IBOutlet weak var registerRepeatPasswordField: UITextField!
-    @IBOutlet weak var errorLabel: UILabel!
+    var registrationError: UIAlertController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Create new alert for registration errors
+        registrationError = UIAlertController(title: "Alert", message : "", preferredStyle: .alert)
 
+        // Create OK button with action handler
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in return})
+        
+        //Add OK button to a dialog message
+        registrationError.addAction(ok)
+        
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @IBAction func registerLoginButton(_ sender: Any) {
     /*
@@ -44,25 +43,22 @@ class RegistrationViewController: UIViewController {
         
         // If the password and repeat password do not match.
         if new_user.password != repeatPW {
-            print("Passwords do not match")
             // Display an error message.
-            self.errorLabel.text = "Passwords do not match.\nPlease try again."
+            self.registrationError.message = "Passwords do not match.\nPlease try again."
+            self.present(self.registrationError, animated: true, completion: nil)
         } else {
             new_user.signUpInBackground{ (success, error) in
                 switch error {
                     // If the user name is already taken, display an error message.
-                    case .some(let error as NSError):
-                        print(error.localizedDescription)
-                    self.errorLabel.text = "This username is already taken.\nPlease try again."
+                case .some(_ as NSError):
+                        self.registrationError.message = "This username is already taken.\nPlease try again."
+                        self.present(self.registrationError, animated: true, completion: nil)
 
                     case .none:
-                        print("Success")
-                        self.errorLabel.text = "Registration Successful.\nTaking you to the Home screen."
                         // Waits 2 sencds before performSegue.
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
                             self.performSegue(withIdentifier: "loginSegue", sender: self)
                         })
-                    //self.performSegue(withIdentifier: "loginSegue", sender: nil)
                     }
                 }
         }

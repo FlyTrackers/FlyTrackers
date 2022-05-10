@@ -15,6 +15,16 @@ class ParseAPICaller {
                     NSLocalizedDescriptionKey :  NSLocalizedString("Invalid Settings Field", value: "Invalid setting column header given. Please use valid, case-sensitive setting column headers.", comment: "") ,
             ]
     
+    let usernameExists: [String : Any] =
+                [
+                    NSLocalizedDescriptionKey :  NSLocalizedString("Username Already Exists", value: "Username already exists. Please choose another.", comment: "") ,
+            ]
+    
+    let invalidFlightData: [String : Any] =
+                [
+                    NSLocalizedDescriptionKey :  NSLocalizedString("Invalid Favorited Flight Data", value: "The Flight to save has invalid data.", comment: "") ,
+            ]
+    
     // MARK:  - Register New User
     
     func registerNewUser(username: String, password: String, completion: @escaping (Result<Bool, NSError>) -> ()) {
@@ -94,6 +104,57 @@ class ParseAPICaller {
     ///                 ---HANDLE FAILURE HERE---
     ///         }
     ///     })
+    ///
+    
+    // MARK: - Change a User's Username
+    
+    /**
+        Changes the user's username.
+     
+        - Parameter userToChange: The current user - this user's settings are being changed
+        - Parameter newUsername: A string containing the new username to change to
+     
+        - Raises errors, either if username already taken, or if Parse returns an error
+     */
+    func changeUsername(userToChange: PFUser, newUsername: String, completion: @escaping (Result<Bool, NSError>) -> ()) {
+        
+        let userSettingsQuery = PFUser.query()!
+        userSettingsQuery.whereKey("username", equalTo: newUsername)
+        userSettingsQuery.getFirstObjectInBackground() {(userWithUsername, error)  in
+            
+            if let error = error {
+                let errorCode = (error as NSError).code
+                
+                switch errorCode {
+                case 101:
+                    // 101 Code indicates a user object has not been found with that username
+                    userToChange.username = newUsername
+                    userToChange.saveInBackground()
+                    completion(.success(true))
+                
+                default:
+                    completion(.failure(error as NSError))
+                }
+            } else {
+                // Indicates a user object already has that username
+                let error = NSError(domain: "usernameExists", code: 137, userInfo: self.usernameExists)
+                completion(.failure(error as NSError))
+            }
+        }
+    }
+    
+    /// Example parse call for settings a user's default settings
+    ///     let parseAPI = ParseAPICaller()
+    ///     let newUsername = changeUsernameField.text
+    ///
+    ///     parseAPI.changeUsername(user: PFUser.current()!, newUsername: newUsername completion: { result in
+    ///         switch result {
+    ///             case .success(let success):
+    ///                 ---HANDLE SUCCESS HERE---
+    ///             case .failure(let error):
+    ///                 ---HANDLE FAILURE HERE---
+    ///         }
+    ///     })
 
     // MARK: - Change a User's DefaultSettings
     
@@ -157,11 +218,27 @@ class ParseAPICaller {
 
     // MARK: - Add Flight Data
     
-    // Note: flightData set to Any until we figure out a proper type to send it in as
-    func saveFlightData(user: PFUser, flightData: Any, completion: @escaping (Result<Bool, NSError>) -> ()) {
+    /**
+        Adds the user's favorited flight data to the Parse database in JSON format.
+     
+        - Parameter user: The current user - this user has favorited a flight
+        - Parameter flightData: A Flight model containing the user's favorited flight info
+     
+        - Raises errors, either if the flight cannot be favorited, or if there is an error with Parse
+     */
+    func saveFlightData(user: PFUser, flightData: Flight, completion: @escaping (Result<Bool, NSError>) -> ()) {
         let newFlightDataToSave = PFObject(className: "FlightTrack")
+        
+        let flightSerialized = try? JSONEncoder().encode(flightData)
+        
+        guard let flightSerialized = flightSerialized else {
+            let error = NSError(domain: "invalidFlightData", code: 999, userInfo: invalidFlightData)
+            completion(.failure(error as NSError))
+            return
+        }
+        
         newFlightDataToSave["addedBy"] = user
-        newFlightDataToSave["trackingData"] = [flightData]
+        newFlightDataToSave["trackingData"] = String(data: flightSerialized, encoding: .utf8)
         
         newFlightDataToSave.saveInBackground { (success, error) in
             if let error = error {
@@ -174,7 +251,7 @@ class ParseAPICaller {
     
     /// Example parse call for saving the data
     ///     let parseAPI = ParseAPICaller()
-    ///     parseAPI.saveFlightData(user: PFUser.current(),  flightData: MyJsonData, completion: { result in
+    ///     parseAPI.saveFlightData(user: PFUser.current(),  flightData: FlightModelData, completion: { result in
     ///         switch result {
     ///             case .success(let dataSaved):
     ///                 ---HANDLE SUCCESS HERE---
@@ -182,5 +259,53 @@ class ParseAPICaller {
     ///                 ---HANDLE FAILURE HERE---
     ///         }
     ///     })
+
+// MARK: - Retrieve Favorited Flight Data
+
+/**
+    Retrieves the user's favorited flight data and decodes it into a Flight Model array
+ 
+    - Parameter user: The current user - this user favorited flights are being requested
+ 
+    - Returns [Flight]: An array of Flight Models for the requested user
+    - Raises errors if the flight data cannot be retrieved
+ */
+func retrieveFavoritedFlightData(user: PFUser, completion: @escaping (Result<[Flight], NSError>) -> ()) {
+    let userFavoritedFlightQuery = PFQuery(className: "FlightTrack")
+    userFavoritedFlightQuery.includeKey("addedBy")
+    userFavoritedFlightQuery.whereKey("addedBy", equalTo: user)
     
+    userFavoritedFlightQuery.findObjectsInBackground { (flights, error) in
+        if let error = error {
+            completion(.failure(error as NSError))
+        } else {
+            var userFlights = [Flight]()
+
+            for flightJSON in flights! {
+                let trackingData : String = flightJSON["trackingData"] as? String ?? ""
+                
+                if let trackingData = trackingData.data(using: .utf8) {
+                    let flight = try? JSONDecoder().decode(Flight.self, from: trackingData)
+            
+                    if let flight = flight {
+                        userFlights.append(flight)
+                    }
+                }
+            }
+            completion(.success(userFlights))
+        }
+    }
+}
+
+/// Example parse call for saving the data
+///     let parseAPI = ParseAPICaller()
+///     parseAPI.retrieveFavoritedFlightData(user: PFUser.current(),  completion: { result in
+///         switch result {
+///             case .success(let flights):
+///                 ---HANDLE SUCCESS HERE---
+///             case .failure(let error):
+///                 ---HANDLE FAILURE HERE---
+///         }
+///     })
+
 }

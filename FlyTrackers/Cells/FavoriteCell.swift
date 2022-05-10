@@ -1,8 +1,8 @@
 //
-//  ResultCell.swift
+//  FavoriteCell.swift
 //  FlyTrackers
 //
-//  Created by Elliott Larsen on 3/20/22.
+//  Created by Christian Franklin on 5/7/22.
 //
 
 import UIKit
@@ -10,15 +10,14 @@ import Foundation
 import Parse
 import SwiftyJSON
 
-class ResultCell: UITableViewCell {
-    
+class FavoriteCell: UITableViewCell {
+
     @IBOutlet weak var airlineLabel: UILabel!
     @IBOutlet weak var flightNumberLabel: UILabel!
     @IBOutlet weak var ETALabel: UILabel!
     @IBOutlet weak var favButton: UIButton!
     
-    var favorited:Bool = false
-    
+    var favorited:Bool = true
     var flight: Flight! {
         didSet {
             airlineLabel.text = flight.airline
@@ -38,20 +37,20 @@ class ResultCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
     @IBAction func favoriteFlight(_ sender: Any) {
-        let toBeFavorited = !favorited
+        let toBeFavorited = favorited
         if (toBeFavorited) {
-            self.setFavorite(true)
-        } else {
             self.setFavorite(false)
+        } else {
+            self.setFavorite(true)
         }
     }
     
     func setFavorite(_ isFavorited:Bool) {
         favorited = isFavorited
         if (favorited) {
-            favButton.setImage(UIImage(named:"Favorited"), for: UIControl.State.normal)
+            favButton.setImage(UIImage(named:"Results"), for: UIControl.State.normal)
 
             let parseAPI = ParseAPICaller()
             parseAPI.saveFlightData(user: PFUser.current()!,  flightData: flight, completion: { result in
@@ -63,9 +62,11 @@ class ResultCell: UITableViewCell {
                  }
              })
         } else {
-            favButton.setImage(UIImage(named:"Results"), for: UIControl.State.normal)
+            favButton.setImage(UIImage(named:"Favorited"), for: UIControl.State.normal)
         }
     }
     
     
 }
+
+

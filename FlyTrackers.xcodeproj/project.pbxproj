@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05EFA89C2826D59900707A99 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EFA89B2826D59900707A99 /* FavoritesViewController.swift */; };
+		05EFA8A02826EBDD00707A99 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EFA89F2826EBDD00707A99 /* FavoriteCell.swift */; };
 		1649887927F7DFD8009D2169 /* example_call.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1649887827F7DFD8009D2169 /* example_call.swift */; };
 		1649887B27F7E3D1009D2169 /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1649887A27F7E3D1009D2169 /* FlightModel.swift */; };
 		1649887D27F8BCEC009D2169 /* FlightSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1649887C27F8BCEC009D2169 /* FlightSingleton.swift */; };
@@ -25,10 +27,13 @@
 		AB40DAEC27E7B3FE00055803 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB40DAEB27E7B3FE00055803 /* MapViewController.swift */; };
 		AB40DAEE27E7B51200055803 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB40DAED27E7B51200055803 /* SearchResultsViewController.swift */; };
 		AB40DAF027E7B55600055803 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB40DAEF27E7B55600055803 /* ResultCell.swift */; };
+		AB9412642820C89F0045D6BB /* RateUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9412632820C89F0045D6BB /* RateUsViewController.swift */; };
 		CEDA1E10CFB0D1D0E7493BB2 /* Pods_FlyTrackers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B654FCD3DAA6E23AFDCCCC /* Pods_FlyTrackers.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05EFA89B2826D59900707A99 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		05EFA89F2826EBDD00707A99 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		093A3C25DD2F525891B1AF80 /* Pods-FlyTrackers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyTrackers.release.xcconfig"; path = "Target Support Files/Pods-FlyTrackers/Pods-FlyTrackers.release.xcconfig"; sourceTree = "<group>"; };
 		1649887827F7DFD8009D2169 /* example_call.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example_call.swift; sourceTree = "<group>"; };
 		1649887A27F7E3D1009D2169 /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
@@ -44,13 +49,14 @@
 		AB37A1B827E17AFA00ACDD71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB37A1BA27E17AFA00ACDD71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AB37A1BF27E17AFA00ACDD71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AB37A1C127E17AFB00ACDD71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB37A1C127E17AFB00ACDD71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = /Users/ggpropersi/Documents/FlyTrackers/FlyTrackers/Assets.xcassets; sourceTree = "<absolute>"; };
 		AB37A1C427E17AFB00ACDD71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB37A1C627E17AFB00ACDD71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB40DAE927E7AE6400055803 /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		AB40DAEB27E7B3FE00055803 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AB40DAED27E7B51200055803 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		AB40DAEF27E7B55600055803 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
+		AB9412632820C89F0045D6BB /* RateUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsViewController.swift; sourceTree = "<group>"; };
 		C6B654FCD3DAA6E23AFDCCCC /* Pods_FlyTrackers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyTrackers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -102,6 +108,8 @@
 				AB40DAE927E7AE6400055803 /* FiltersViewController.swift */,
 				AB40DAEB27E7B3FE00055803 /* MapViewController.swift */,
 				AB40DAED27E7B51200055803 /* SearchResultsViewController.swift */,
+				AB9412632820C89F0045D6BB /* RateUsViewController.swift */,
+				05EFA89B2826D59900707A99 /* FavoritesViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -110,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				AB40DAEF27E7B55600055803 /* ResultCell.swift */,
+				05EFA89F2826EBDD00707A99 /* FavoriteCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -285,9 +294,12 @@
 				16C9A60B27EA9BFF0086A4E5 /* Parse_API.swift in Sources */,
 				AB31F39D27E6E9830091DB15 /* SettingsViewController.swift in Sources */,
 				AB40DAEE27E7B51200055803 /* SearchResultsViewController.swift in Sources */,
+				AB9412642820C89F0045D6BB /* RateUsViewController.swift in Sources */,
 				AB40DAF027E7B55600055803 /* ResultCell.swift in Sources */,
 				AB40DAEC27E7B3FE00055803 /* MapViewController.swift in Sources */,
 				1649887D27F8BCEC009D2169 /* FlightSingleton.swift in Sources */,
+				05EFA8A02826EBDD00707A99 /* FavoriteCell.swift in Sources */,
+				05EFA89C2826D59900707A99 /* FavoritesViewController.swift in Sources */,
 				1649887B27F7E3D1009D2169 /* FlightModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,7 +450,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y42JHZQ6LQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlyTrackers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -467,7 +479,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y42JHZQ6LQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlyTrackers/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,31 +16,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="a3Z-pk-gw3">
-                                <rect key="frame" x="78" y="323" width="259" height="259"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="a3Z-pk-gw3" secondAttribute="height" multiplier="1:1" id="Zax-kP-ral"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FlyTrackers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w31-bI-Mxu">
-                                <rect key="frame" x="0.0" y="228" width="414" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="w31-bI-Mxu" secondAttribute="height" multiplier="149:27" id="zZt-qC-62v"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Rml-41-aXG">
+                                <rect key="frame" x="36.5" y="240.5" width="341" height="415"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FlyTrackers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w31-bI-Mxu">
+                                        <rect key="frame" x="21.5" y="0.0" width="298" height="54"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="w31-bI-Mxu" secondAttribute="height" multiplier="149:27" id="zZt-qC-62v"/>
+                                        </constraints>
+
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="a3Z-pk-gw3">
+                                        <rect key="frame" x="0.0" y="74" width="341" height="341"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="a3Z-pk-gw3" secondAttribute="height" multiplier="1:1" id="Zax-kP-ral"/>
+                                        </constraints>
+
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="a3Z-pk-gw3" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="58" id="3dZ-ri-bmy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="a3Z-pk-gw3" secondAttribute="trailing" constant="57" id="3jI-D8-gWm"/>
-                            <constraint firstItem="w31-bI-Mxu" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="9N5-l8-gnw"/>
-                            <constraint firstItem="a3Z-pk-gw3" firstAttribute="top" secondItem="w31-bI-Mxu" secondAttribute="bottom" constant="20" id="OUX-VU-Pld"/>
-                            <constraint firstAttribute="trailing" secondItem="w31-bI-Mxu" secondAttribute="trailing" id="Uhr-OK-vhr"/>
-                            <constraint firstItem="a3Z-pk-gw3" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="279" id="lv3-Id-03K"/>
+                            <constraint firstItem="Rml-41-aXG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36.5" id="W3e-IG-xX0"/>
+                            <constraint firstItem="Rml-41-aXG" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="fWS-52-aib"/>
+                            <constraint firstItem="Rml-41-aXG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kyc-au-se9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rml-41-aXG" secondAttribute="trailing" constant="36.5" id="oAl-nk-CeV"/>
+
                         </constraints>
                     </view>
                 </viewController>

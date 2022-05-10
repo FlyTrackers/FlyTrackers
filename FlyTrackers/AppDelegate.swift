@@ -7,17 +7,34 @@
 
 import UIKit
 import Parse
+import Security
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        // UserDefaults isn't secure, figure out KeyChain.
+        // This stores the ClientKey and APIKey in UserDefaults.... no good since can be easily accessed
+        let defaults = UserDefaults.standard
+        
+        if defaults.string(forKey: "APIKey") == nil {
+            defaults.set(ProcessInfo.processInfo.environment["APP_ID"]!, forKey: "APIKey")
+        }
+        
+        if defaults.string(forKey: "ClientKey") == nil {
+            defaults.set(ProcessInfo.processInfo.environment["CLIENT_KEY"]!, forKey: "ClientKey")
+            
+        }
+        defaults.synchronize()
+        let apiKey = defaults.string(forKey: "APIKey")
+        let clientKey = defaults.string(forKey: "ClientKey")
+        
+
         // Parse Connection
         let parseConfig = ParseClientConfiguration {
-            $0.applicationId = ProcessInfo.processInfo.environment["APP_ID"]
-            $0.clientKey = ProcessInfo.processInfo.environment["CLIENT_KEY"]
+            $0.applicationId = apiKey
+            $0.clientKey = clientKey
             $0.server = "https://parseapi.back4app.com"
         }
         
