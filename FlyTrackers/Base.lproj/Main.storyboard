@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                  <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="2VF-bw-l9e">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="2VF-bw-l9e">
                                 <rect key="frame" x="40" y="89" width="334" height="728"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="5ha-Te-kDP">
@@ -179,7 +179,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-          		<constraint firstItem="2VF-bw-l9e" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="5We-ED-c9m"/>
+                            <constraint firstItem="2VF-bw-l9e" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="5We-ED-c9m"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2VF-bw-l9e" secondAttribute="trailing" constant="40" id="KrA-oy-Kxg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2VF-bw-l9e" secondAttribute="bottom" constant="45" id="k1i-WQ-WLi"/>
                             <constraint firstItem="2VF-bw-l9e" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l6D-om-xKj"/>
@@ -494,7 +494,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="324" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" text="Dark Mode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECz-d4-zp4">
-                                                <rect key="frame" x="0.0" y="0.0" width="143.33333333333334" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="143.5" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="rec-2r-FrF"/>
                                                 </constraints>
@@ -503,7 +503,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="745" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bbB-dh-phL">
-                                                <rect key="frame" x="190.33333333333337" y="0.0" width="133.66666666666663" height="32"/>
+                                                <rect key="frame" x="190.5" y="0.0" width="133.5" height="32"/>
                                                 <color key="backgroundColor" red="0.3058823645" green="0.39215683940000001" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="77" id="QzF-CC-g0b"/>
@@ -682,7 +682,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" rowHeight="100" id="yhn-Zj-K68" customClass="ResultCell" customModule="FlyTrackers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.666666030883789" width="414" height="100"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yhn-Zj-K68" id="XRy-uN-AB1">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -1205,7 +1205,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Home" width="21" height="21"/>
-        <image name="LandingPage" width="341.33334350585938" height="341.33334350585938"/>
+        <image name="LandingPage" width="341" height="341"/>
         <image name="Results" width="21" height="21"/>
         <image name="Settings" width="21" height="21"/>
         <systemColor name="secondarySystemBackgroundColor">

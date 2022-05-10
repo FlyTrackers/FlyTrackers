@@ -48,6 +48,11 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
 
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.stopAnimation()
+    }
+    
 // MARK: - IBActions, API Call
     
     @IBAction func searchButton(_ sender: Any) {
@@ -176,6 +181,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     private func stopAnimation() {
         animationView?.stop()
         animationView?.isHidden = true
+        animationView?.removeFromSuperview()
     }
 }
 
