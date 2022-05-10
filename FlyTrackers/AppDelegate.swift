@@ -37,8 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             $0.clientKey = clientKey
             $0.server = "https://parseapi.back4app.com"
         }
-        print(parseConfig.applicationId!)
-        print(parseConfig.clientKey!)
         
         Parse.initialize(with: parseConfig)
         

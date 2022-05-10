@@ -358,79 +358,120 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Airline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUn-3K-05q">
-                                <rect key="frame" x="60" y="178" width="294" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.3058823645" green="0.39215683940000001" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flight Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYQ-EH-mEv">
-                                <rect key="frame" x="60" y="279" width="294" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.3058823645" green="0.39215683940000001" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7d0-bH-Xd9">
-                                <rect key="frame" x="60" y="223" width="294" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Dw-A6-9dw">
-                                <rect key="frame" x="60" y="324" width="294" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PwI-6Y-vph">
-                                <rect key="frame" x="60" y="428" width="294" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVV-39-JFW">
-                                <rect key="frame" x="126" y="516" width="152" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Search">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="searchButton:" destination="Fdt-u3-Jys" eventType="touchUpInside" id="3tS-Je-wei"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ra-bX-Gfx">
-                                <rect key="frame" x="60" y="582" width="294" height="137"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.2841566801" green="0.39540901779999998" blue="0.44736123090000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flight Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2c3-zx-7b9">
-                                <rect key="frame" x="60" y="383" width="294" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.3058823645" green="0.39215683940000001" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="67" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CeZ-IS-vB9">
+                                <rect key="frame" x="45" y="96" width="324" height="657"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hbl-M5-AtO">
+                                        <rect key="frame" x="0.0" y="0.0" width="324" height="69"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Airline" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUn-3K-05q">
+                                                <rect key="frame" x="0.0" y="0.0" width="324" height="31"/>
+                                                <color key="backgroundColor" red="0.3058823645" green="0.39215683940000001" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="31" id="WNq-FX-svh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7d0-bH-Xd9">
+                                                <rect key="frame" x="0.0" y="39" width="324" height="30"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="3qO-KX-6mQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="cUn-3K-05q" firstAttribute="centerX" secondItem="hbl-M5-AtO" secondAttribute="centerX" id="1HJ-wb-Zwk"/>
+                                            <constraint firstAttribute="trailing" secondItem="7d0-bH-Xd9" secondAttribute="trailing" id="8h7-eR-isC"/>
+                                            <constraint firstItem="cUn-3K-05q" firstAttribute="leading" secondItem="hbl-M5-AtO" secondAttribute="leading" id="94p-9T-aMS"/>
+                                            <constraint firstAttribute="trailing" secondItem="cUn-3K-05q" secondAttribute="trailing" id="Cov-vn-E1n"/>
+                                            <constraint firstItem="7d0-bH-Xd9" firstAttribute="centerX" secondItem="hbl-M5-AtO" secondAttribute="centerX" id="i5m-E9-7oN"/>
+                                            <constraint firstItem="7d0-bH-Xd9" firstAttribute="leading" secondItem="hbl-M5-AtO" secondAttribute="leading" id="kWT-Wo-9bg"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sdn-hr-sYE">
+                                        <rect key="frame" x="0.0" y="143.5" width="324" height="69"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYQ-EH-mEv">
+                                                <rect key="frame" x="0.0" y="0.0" width="324" height="31"/>
+                                                <color key="backgroundColor" red="0.3058823645" green="0.39215683940000001" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Dw-A6-9dw">
+                                                <rect key="frame" x="0.0" y="39" width="324" height="30"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="10S-j8-mbO">
+                                        <rect key="frame" x="0.0" y="286.5" width="324" height="255"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flight Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2c3-zx-7b9">
+                                                <rect key="frame" x="0.0" y="0.0" width="324" height="31"/>
+                                                <color key="backgroundColor" red="0.3058823645" green="0.39215683940000001" blue="0.44313728810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker toolTip="CHOOSE A DATE" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="760" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" highlighted="YES" selected="YES" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFc-CF-GKp">
+                                                <rect key="frame" x="0.0" y="39" width="324" height="216"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="o8r-F4-726"/>
+                                                </constraints>
+                                                <date key="date" timeIntervalSinceReferenceDate="672887421.28766799">
+                                                    <!--2022-04-29 01:10:21 +0000-->
+                                                </date>
+                                            </datePicker>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVV-39-JFW">
+                                        <rect key="frame" x="0.0" y="619" width="324" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="UaV-ir-Pqc"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Search">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                            <color key="baseForegroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                            <color key="baseBackgroundColor" systemColor="systemBlueColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="searchButton:" destination="Fdt-u3-Jys" eventType="touchUpInside" id="3tS-Je-wei"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hVV-39-JFW" firstAttribute="leading" secondItem="CeZ-IS-vB9" secondAttribute="leading" id="8aO-px-AtT"/>
+                                    <constraint firstItem="7Dw-A6-9dw" firstAttribute="height" secondItem="7d0-bH-Xd9" secondAttribute="height" id="cGb-S2-Mp6"/>
+                                    <constraint firstAttribute="bottom" secondItem="hVV-39-JFW" secondAttribute="bottom" id="cLW-tK-rRr"/>
+                                    <constraint firstAttribute="trailing" secondItem="hVV-39-JFW" secondAttribute="trailing" id="gQ7-4h-YOo"/>
+                                    <constraint firstItem="CYQ-EH-mEv" firstAttribute="height" secondItem="cUn-3K-05q" secondAttribute="height" id="jjd-op-Udd"/>
+                                    <constraint firstItem="2c3-zx-7b9" firstAttribute="height" secondItem="CYQ-EH-mEv" secondAttribute="height" id="lJ0-XJ-OJU"/>
+                                    <constraint firstItem="hVV-39-JFW" firstAttribute="centerX" secondItem="CeZ-IS-vB9" secondAttribute="centerX" id="oSO-mM-Qok"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="krr-0f-Vnj"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CeZ-IS-vB9" firstAttribute="top" secondItem="krr-0f-Vnj" secondAttribute="top" constant="40" id="1KD-We-dWY"/>
+                            <constraint firstItem="CeZ-IS-vB9" firstAttribute="leading" secondItem="krr-0f-Vnj" secondAttribute="leading" constant="45" id="Jyt-KW-dc9"/>
+                            <constraint firstItem="krr-0f-Vnj" firstAttribute="trailing" secondItem="CeZ-IS-vB9" secondAttribute="trailing" constant="45" id="gQR-pP-WJF"/>
+                            <constraint firstItem="krr-0f-Vnj" firstAttribute="bottom" secondItem="CeZ-IS-vB9" secondAttribute="bottom" constant="60" id="uHt-IF-Dto"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home/Search" id="hFQ-zO-coq"/>
                     <connections>
                         <outlet property="airlineField" destination="7d0-bH-Xd9" id="wkf-HB-VFy"/>
-                        <outlet property="errorLabel" destination="2ra-bX-Gfx" id="KO1-QJ-q2s"/>
-                        <outlet property="flightDateField" destination="PwI-6Y-vph" id="nCC-vK-h9B"/>
+                        <outlet property="dateWheel" destination="uFc-CF-GKp" id="NRu-i9-nt5"/>
                         <outlet property="flightNumberField" destination="7Dw-A6-9dw" id="0N0-Hl-7Xm"/>
                     </connections>
                 </viewController>
@@ -1160,7 +1201,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wOh-Fs-l0a"/>
+        <segue reference="QjA-kw-C3P"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Home" width="21" height="21"/>
@@ -1172,6 +1213,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -7,51 +7,67 @@
 
 import UIKit
 import SwiftyJSON
+import Lottie
 
 class HomeViewController: UIViewController, UITabBarControllerDelegate {
     
-    @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var airlineField: UITextField!
     @IBOutlet weak var flightNumberField: UITextField!
-    @IBOutlet weak var flightDateField: UITextField!
-    //var flights = [[String:Any]]()
+    @IBOutlet weak var dateWheel: UIDatePicker!
     
     var flights = [Flight]()
-    var flightsForDisplay = [Flight]()
     var inputAirline: String = ""
     var inputFlightNumber: String = ""
     var inputFlightDate: String = ""
     var userInput = [String: String]()
     
+    var searchPopup: UIAlertController!
+    
+    var animationView: AnimationView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Create new alert for indicating successful change
+        searchPopup = UIAlertController(title: "Status", message : "", preferredStyle: .alert)
+
+        // Create OK button with action handler
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in return})
+        
+        //Add OK button to a dialog message
+        searchPopup.addAction(ok)
 
         self.tabBarController?.delegate = self
         // Do any additional setup after loading the view.
+        
+        // Only allow selection from tomorrow onwards
+        dateWheel.minimumDate = .now + (86400)
+        
+        // Only show up to 10 days of possible data
+        dateWheel.maximumDate = .now + (86400 * 10)
+
     }
     
-
+// MARK: - IBActions, API Call
     
     @IBAction func searchButton(_ sender: Any) {
     // Get API data for 100 flights
         
         inputAirline = airlineField.text ?? ""
         inputFlightNumber = flightNumberField.text ?? ""
-        inputFlightDate = flightDateField.text ?? ""
+
+        // Convert date to string format that is output from API results, in order to match dates
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd"
         
-        // No inputs, pass error
-        if (inputAirline == "" && inputFlightNumber == "" && inputFlightDate == ""){
-            self.errorLabel.text = "Please enter at least one search term."
-            return
-        }
-        
-        // Clear error
-        self.errorLabel.text = ""
-        
+        inputFlightDate = dateFormatterGet.string(from: dateWheel.date)
+
         // Clear the singleton and local array since using a new search
         Flights.sharedInstance.array.removeAll()
         self.flights.removeAll()
+        
+        // Start animation
+        startAnimation()
         
         // Call API
         let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=1f5b9049373e816968e08176b33c3022")!
@@ -60,7 +76,9 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         let task = session.dataTask(with: request) { (data, response, error) in
              // This will run when the network request returns
             if let error = error {
-                   print(error.localizedDescription)
+                self.searchPopup.message = "Error: \(error.localizedDescription)"
+                self.present(self.searchPopup, animated: true, completion: nil)
+                return
             } else if let data = data {
                     do {
                         let dataDictionary = try JSON(data: data)
@@ -69,32 +87,46 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
                             let flightData = Flight.init(flight: flight)
                             self.flights.append(flightData)
                         }
-                        
+
                         // Filter out the data based on search options
                         self.getOnlyInputRequestedData()
                         
-                        // Send to results tab
-
-                        self.tabBarController?.selectedIndex = 1
+                        self.stopAnimation()
                         
+                        // If empty, tell user the search produced nothing
+                        if Flights.sharedInstance.array.isEmpty {
+                            
+                            self.searchPopup.message = "No flights to display."
+                            self.present(self.searchPopup, animated: true, completion: nil)
+                            return
+                        }
+
+                        // Send to results tab
+                        self.tabBarController?.selectedIndex = 1
+
                     } catch {
                         // Couldn't read in the JSON data correctly
-                        self.errorLabel.text = "Error reading JSON"
+                        self.stopAnimation()
+                        self.searchPopup.message = "Error reading aviationstack API JSON results."
+                        self.present(self.searchPopup, animated: true, completion: nil)
                         return
                     }
             }
        }
        task.resume()
     }
-            
-    func getOnlyInputRequestedData() {
+
+// MARK: - Functions for filtering API response data
+    
+    private func getOnlyInputRequestedData() {
         // Filter out the flights based on the user input
+        
         userInput = [
             "Airline": inputAirline,
             "FlightNumb": inputFlightNumber,
             "FlightDate": inputFlightDate
         ]
-        
+    
         for flight in self.flights{
             // Find the ones with the matching airline, flight number, and flight date
             
@@ -104,7 +136,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         }
     }
     
-    func doesFlightMatchInput(singleFlight: Flight) -> Bool {
+    private func doesFlightMatchInput(singleFlight: Flight) -> Bool {
         // Check if the flight matches the input data
         
         var doesMatch: Bool = true
@@ -131,6 +163,20 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         return doesMatch
     }
     
+    
+// MARK: - Functions for animations
+    private func startAnimation() {
+        animationView?.isHidden = false
+        animationView = .init(name: "plane_flying_loading2")
+        animationView?.frame = view.bounds
+        view.addSubview(animationView!)
+        animationView?.play()
+    }
+    
+    private func stopAnimation() {
+        animationView?.stop()
+        animationView?.isHidden = true
+    }
 }
 
 
