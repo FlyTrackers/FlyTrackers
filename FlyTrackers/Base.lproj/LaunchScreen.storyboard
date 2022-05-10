@@ -41,6 +41,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
                             <constraint firstItem="Rml-41-aXG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36.5" id="W3e-IG-xX0"/>
                             <constraint firstItem="Rml-41-aXG" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="fWS-52-aib"/>
                             <constraint firstItem="Rml-41-aXG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kyc-au-se9"/>
