@@ -762,8 +762,7 @@
                                             <outlet property="airlineLabel" destination="IR4-RY-Ksg" id="Din-I3-beD"/>
                                             <outlet property="favButton" destination="0Hp-Gf-our" id="Bd8-BN-RdZ"/>
                                             <outlet property="flightNumberLabel" destination="Bhp-oZ-ous" id="3eL-cC-Jpd"/>
-                                            <outlet property="flightView" destination="iFH-nc-cMH" id="XNZ-5k-vCc"/>
-                                            <segue destination="li4-iE-1hC" kind="show" identifier="mapSegue" id="v2R-bC-fSI"/>
+                                            <segue destination="li4-iE-1hC" kind="show" identifier="segueMap" id="ewk-i2-tML"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -781,7 +780,7 @@
                     <navigationItem key="navigationItem" title="Search Results" id="PTJ-Cc-IFH">
                         <barButtonItem key="rightBarButtonItem" title="Filters" id="MJS-tP-BmN">
                             <connections>
-                                <segue destination="FlN-fG-JIY" kind="show" identifier="filterSegue" id="XiJ-t3-j97"/>
+                                <segue destination="FlN-fG-JIY" kind="show" identifier="segueFilter" id="f4b-3c-4Ft"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1353,7 +1352,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ewk-i2-tML"/>
+        <segue reference="mTs-8V-ddQ"/>
         <segue reference="f4b-3c-4Ft"/>
         <segue reference="wOh-Fs-l0a"/>
     </inferredMetricsTieBreakers>

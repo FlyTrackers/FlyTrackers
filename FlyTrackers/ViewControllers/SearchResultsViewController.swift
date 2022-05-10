@@ -34,7 +34,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "mapSegue") {
+        if (segue.identifier == "segueMap") {
             print("Loading Map View screen")
             // Find flight from search results
             let cell = sender as! UITableViewCell
