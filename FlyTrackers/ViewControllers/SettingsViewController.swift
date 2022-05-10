@@ -99,4 +99,9 @@ class SettingsViewController: UIViewController {
     }
     */
 
+    @IBAction func rateUsButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "rateUs", sender: self)
+        
+    }
+    
 }
