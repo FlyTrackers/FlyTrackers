@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "icons8-airplane-64.png",
+      "filename" : "icons8-airport-50.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "icons8-airport-100.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
