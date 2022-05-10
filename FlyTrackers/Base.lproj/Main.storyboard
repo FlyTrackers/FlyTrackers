@@ -762,7 +762,8 @@
                                             <outlet property="airlineLabel" destination="IR4-RY-Ksg" id="Din-I3-beD"/>
                                             <outlet property="favButton" destination="0Hp-Gf-our" id="Bd8-BN-RdZ"/>
                                             <outlet property="flightNumberLabel" destination="Bhp-oZ-ous" id="3eL-cC-Jpd"/>
-                                            <segue destination="li4-iE-1hC" kind="show" identifier="segueMap" id="ewk-i2-tML"/>
+                                            <outlet property="flightView" destination="iFH-nc-cMH" id="XNZ-5k-vCc"/>
+                                            <segue destination="li4-iE-1hC" kind="show" identifier="mapSegue" id="v2R-bC-fSI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -780,7 +781,7 @@
                     <navigationItem key="navigationItem" title="Search Results" id="PTJ-Cc-IFH">
                         <barButtonItem key="rightBarButtonItem" title="Filters" id="MJS-tP-BmN">
                             <connections>
-                                <segue destination="FlN-fG-JIY" kind="show" identifier="segueFilter" id="f4b-3c-4Ft"/>
+                                <segue destination="FlN-fG-JIY" kind="show" identifier="filterSegue" id="XiJ-t3-j97"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1041,7 +1042,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cO6-Mv-nZp">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" showsUserLocation="YES" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cO6-Mv-nZp">
                                 <rect key="frame" x="20" y="369" width="374" height="390"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="390" id="3X7-1p-d96"/>
