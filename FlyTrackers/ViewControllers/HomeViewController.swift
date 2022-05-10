@@ -7,7 +7,11 @@
 
 import UIKit
 import SwiftyJSON
+<<<<<<< HEAD
 import Lottie
+=======
+import Parse
+>>>>>>> favorites
 
 class HomeViewController: UIViewController, UITabBarControllerDelegate {
     

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftyJSON
 
-struct Flight {
+struct Flight : Codable {
     
     // Properties of Flight object
     var flightNumberICAO: String

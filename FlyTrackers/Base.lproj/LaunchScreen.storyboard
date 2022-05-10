@@ -24,6 +24,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="w31-bI-Mxu" secondAttribute="height" multiplier="149:27" id="zZt-qC-62v"/>
                                         </constraints>
+
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -33,17 +34,18 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="a3Z-pk-gw3" secondAttribute="height" multiplier="1:1" id="Zax-kP-ral"/>
                                         </constraints>
+
                                     </imageView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
                             <constraint firstItem="Rml-41-aXG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36.5" id="W3e-IG-xX0"/>
                             <constraint firstItem="Rml-41-aXG" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="fWS-52-aib"/>
                             <constraint firstItem="Rml-41-aXG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kyc-au-se9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rml-41-aXG" secondAttribute="trailing" constant="36.5" id="oAl-nk-CeV"/>
+
                         </constraints>
                     </view>
                 </viewController>
