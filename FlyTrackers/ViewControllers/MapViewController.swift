@@ -2,7 +2,7 @@
 //  MapViewController.swift
 //  FlyTrackers
 //
-//  Created by Charles Xu on 3/20/22.
+//  Created by Charles Xu 2022
 //
 
 import UIKit
