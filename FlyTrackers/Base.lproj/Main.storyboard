@@ -302,26 +302,19 @@
                                     <action selector="registerLoginButton:" destination="LfX-Rt-QXJ" eventType="touchUpInside" id="XNf-Oy-mM9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvb-ow-zxc">
-                                <rect key="frame" x="61" y="606" width="293" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.2841566801" green="0.39540901779999998" blue="0.44736123090000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Iij-0A-gzV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Oo3-0P-0w9" firstAttribute="leading" secondItem="OxO-fG-Hab" secondAttribute="leadingMargin" constant="65" id="3Of-gk-Pjj"/>
+                            <constraint firstItem="Oo3-0P-0w9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OxO-fG-Hab" secondAttribute="leadingMargin" id="3Of-gk-Pjj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="77q-qh-jmx" secondAttribute="trailing" constant="64" id="5tz-Vw-6t4"/>
-                            <constraint firstItem="0GN-db-PYm" firstAttribute="leading" secondItem="OxO-fG-Hab" secondAttribute="leadingMargin" constant="65" id="8m3-n1-M6z"/>
+                            <constraint firstItem="0GN-db-PYm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OxO-fG-Hab" secondAttribute="leadingMargin" id="8m3-n1-M6z"/>
                             <constraint firstAttribute="trailing" secondItem="eFz-Bm-CZT" secondAttribute="trailing" id="8z4-Ht-lff"/>
                             <constraint firstItem="eFz-Bm-CZT" firstAttribute="leading" secondItem="OxO-fG-Hab" secondAttribute="leading" id="AGF-Be-lBQ"/>
                             <constraint firstItem="0GN-db-PYm" firstAttribute="top" secondItem="77q-qh-jmx" secondAttribute="bottom" constant="70" id="EHp-3k-170"/>
                             <constraint firstItem="klM-Nu-GtH" firstAttribute="leading" secondItem="OxO-fG-Hab" secondAttribute="leadingMargin" constant="65" id="Hs9-8Y-brv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="OMk-hj-c7E" secondAttribute="trailing" constant="64" id="JAk-iM-KAk"/>
-                            <constraint firstItem="OMk-hj-c7E" firstAttribute="leading" secondItem="OxO-fG-Hab" secondAttribute="leadingMargin" constant="65" id="LUU-5R-ofv"/>
+                            <constraint firstItem="OMk-hj-c7E" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OxO-fG-Hab" secondAttribute="leadingMargin" id="LUU-5R-ofv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Oo3-0P-0w9" secondAttribute="trailing" constant="64" id="TA1-h3-DWn"/>
                             <constraint firstItem="uVq-gF-Sol" firstAttribute="leading" secondItem="OxO-fG-Hab" secondAttribute="leadingMargin" constant="65" id="Tvt-mo-GSO"/>
                             <constraint firstItem="Oo3-0P-0w9" firstAttribute="top" secondItem="eFz-Bm-CZT" secondAttribute="bottom" constant="47" id="WX6-Nz-k6L"/>
@@ -331,7 +324,7 @@
                             <constraint firstItem="uVq-gF-Sol" firstAttribute="top" secondItem="OMk-hj-c7E" secondAttribute="bottom" constant="8" id="e1u-R7-5R3"/>
                             <constraint firstItem="klM-Nu-GtH" firstAttribute="top" secondItem="Oo3-0P-0w9" secondAttribute="bottom" constant="8" id="f9F-td-RRf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="klM-Nu-GtH" secondAttribute="trailing" constant="64" id="fkI-cM-vcM"/>
-                            <constraint firstItem="Cd0-aQ-djd" firstAttribute="leading" secondItem="OxO-fG-Hab" secondAttribute="leadingMargin" constant="65" id="lIw-A8-j0r"/>
+                            <constraint firstItem="Cd0-aQ-djd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="OxO-fG-Hab" secondAttribute="leadingMargin" id="lIw-A8-j0r"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uVq-gF-Sol" secondAttribute="trailing" constant="64" id="lis-4i-qMa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Cd0-aQ-djd" secondAttribute="trailing" constant="64" id="wEq-ew-uLz"/>
                             <constraint firstItem="eFz-Bm-CZT" firstAttribute="top" secondItem="OxO-fG-Hab" secondAttribute="top" constant="65" id="yAP-6f-ycr"/>
@@ -340,7 +333,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="errorLabel" destination="tvb-ow-zxc" id="Dg1-lp-zXE"/>
                         <outlet property="registerPasswordField" destination="uVq-gF-Sol" id="Mqr-ht-Sdw"/>
                         <outlet property="registerRepeatPasswordField" destination="77q-qh-jmx" id="Ull-KL-A09"/>
                         <outlet property="registerUsernameField" destination="klM-Nu-GtH" id="s38-cN-Z38"/>
@@ -1362,7 +1354,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="ewk-i2-tML"/>
         <segue reference="f4b-3c-4Ft"/>
-        <segue reference="QjA-kw-C3P"/>
+        <segue reference="wOh-Fs-l0a"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Favorited" width="21" height="21"/>

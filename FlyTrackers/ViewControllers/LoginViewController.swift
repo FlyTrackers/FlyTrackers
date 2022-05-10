@@ -12,24 +12,22 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginUsernameField: UITextField!
     @IBOutlet weak var loginPasswordField: UITextField!
-    @IBOutlet weak var loginErrorLabel: UILabel!
+    var loginError: UIAlertController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
-    
+        
+        // Create new alert for registration errors
+        loginError = UIAlertController(title: "Alert", message : "", preferredStyle: .alert)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        // Create OK button with action handler
+        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in return})
+        
+        //Add OK button to a dialog message
+        loginError.addAction(ok)
     }
-    */
-    
+        
     @IBAction func loginButton(_ sender: Any) {
     /*
      Login button.  Authentication and retrieval of user info.
@@ -42,8 +40,8 @@ class LoginViewController: UIViewController {
             if user != nil {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
-                //print("Error: \(error?.localizedDescription)")
-                self.loginErrorLabel.text = "Invalid username/password."
+                self.loginError.message = "Invalid username/password."
+                self.present(self.loginError, animated: true, completion: nil)
                 
             }
         }

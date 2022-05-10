@@ -13,19 +13,9 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
     
     @IBOutlet weak var flightTableView: UITableView!
     var flights = [Flight]()
-    var searchError: UIAlertController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Create new alert for loading of posts error
-        searchError = UIAlertController(title: "Alert", message : "", preferredStyle: .alert)
-
-        // Create OK button with action handler
-        let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in return})
-        
-        //Add OK button to a dialog message
-        searchError.addAction(ok)
         
         flightTableView.delegate = self
         flightTableView.dataSource = self
