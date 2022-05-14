@@ -13,6 +13,8 @@
 		1649887B27F7E3D1009D2169 /* FlightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1649887A27F7E3D1009D2169 /* FlightModel.swift */; };
 		1649887D27F8BCEC009D2169 /* FlightSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1649887C27F8BCEC009D2169 /* FlightSingleton.swift */; };
 		1659C177283038B500171604 /* sorted_airlines.json in Resources */ = {isa = PBXBuildFile; fileRef = 1659C176283038B500171604 /* sorted_airlines.json */; };
+		1677380F28304C54007C9189 /* AirlineSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1677380E28304C54007C9189 /* AirlineSelectionTableViewController.swift */; };
+		167738132830544E007C9189 /* AirlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167738122830544E007C9189 /* AirlineCell.swift */; };
 		16C9A60B27EA9BFF0086A4E5 /* Parse_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C9A60A27EA9BFF0086A4E5 /* Parse_API.swift */; };
 		562980BD27FABE78000750F2 /* airports.json in Resources */ = {isa = PBXBuildFile; fileRef = 562980BC27FABE78000750F2 /* airports.json */; };
 		AB31F39D27E6E9830091DB15 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31F39C27E6E9830091DB15 /* SettingsViewController.swift */; };
@@ -40,6 +42,8 @@
 		1649887A27F7E3D1009D2169 /* FlightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightModel.swift; sourceTree = "<group>"; };
 		1649887C27F8BCEC009D2169 /* FlightSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSingleton.swift; sourceTree = "<group>"; };
 		1659C176283038B500171604 /* sorted_airlines.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sorted_airlines.json; sourceTree = "<group>"; };
+		1677380E28304C54007C9189 /* AirlineSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineSelectionTableViewController.swift; sourceTree = "<group>"; };
+		167738122830544E007C9189 /* AirlineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirlineCell.swift; sourceTree = "<group>"; };
 		16C9A60A27EA9BFF0086A4E5 /* Parse_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse_API.swift; sourceTree = "<group>"; };
 		562980BC27FABE78000750F2 /* airports.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = airports.json; sourceTree = SOURCE_ROOT; };
 		8D797DD14B9DEF98D669345B /* Pods-FlyTrackers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyTrackers.debug.xcconfig"; path = "Target Support Files/Pods-FlyTrackers/Pods-FlyTrackers.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				AB40DAED27E7B51200055803 /* SearchResultsViewController.swift */,
 				AB9412632820C89F0045D6BB /* RateUsViewController.swift */,
 				05EFA89B2826D59900707A99 /* FavoritesViewController.swift */,
+				1677380E28304C54007C9189 /* AirlineSelectionTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 			children = (
 				AB40DAEF27E7B55600055803 /* ResultCell.swift */,
 				05EFA89F2826EBDD00707A99 /* FavoriteCell.swift */,
+				167738122830544E007C9189 /* AirlineCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -304,7 +310,9 @@
 				1649887D27F8BCEC009D2169 /* FlightSingleton.swift in Sources */,
 				05EFA8A02826EBDD00707A99 /* FavoriteCell.swift in Sources */,
 				05EFA89C2826D59900707A99 /* FavoritesViewController.swift in Sources */,
+				167738132830544E007C9189 /* AirlineCell.swift in Sources */,
 				1649887B27F7E3D1009D2169 /* FlightModel.swift in Sources */,
+				1677380F28304C54007C9189 /* AirlineSelectionTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

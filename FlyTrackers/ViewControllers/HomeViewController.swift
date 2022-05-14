@@ -87,8 +87,8 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         startAnimation()
         
         // Call API
-        let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=858cfecb9f5cdce2182ca3161261dfb2")!
-        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        let url = URL(string: "http://api.aviationstack.com/v1/flights?access_key=858cfecb9f5cdce2182ca3161261dfb2&limit=1000")!
+        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 60)
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let task = session.dataTask(with: request) { (data, response, error) in
              // This will run when the network request returns
@@ -132,8 +132,17 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
        }
        task.resume()
     }
+    
+    // MARK: - Navigation
 
-// MARK: - Functions for filtering API response data
+    @IBAction func selectAirlineButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "selectAirlineSegue", sender: sender)
+    }
+    
+    @IBAction func unwind(_ seg: UIStoryboardSegue) {
+    }
+    
+    // MARK: - Functions for filtering API response data
     
     private func getOnlyInputRequestedData() {
         // Filter out the flights based on the user input
@@ -188,6 +197,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         animationView?.frame = view.bounds
         view.addSubview(animationView!)
         animationView?.play()
+        animationView?.loopMode = .loop
     }
     
     private func stopAnimation() {

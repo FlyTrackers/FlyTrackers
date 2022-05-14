@@ -59,8 +59,6 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
             let mapViewController = segue.destination as! MapViewController
             mapViewController.flight = flight
         }
-
-        
     }
 
     // MARK: - Table protocol functions
