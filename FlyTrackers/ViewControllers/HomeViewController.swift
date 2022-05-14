@@ -25,6 +25,7 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
     var searchPopup: UIAlertController!
     
     var animationView: AnimationView?
+    var searchResultsTabBar: UITabBarItem = UITabBarItem()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,17 @@ class HomeViewController: UIViewController, UITabBarControllerDelegate {
         
         // Only show up to 10 days of possible data
         dateWheel.maximumDate = .now + (86400 * 10)
-
+        
+        if let arrayOfTabBarItems = tabBarController?.tabBar.items as AnyObject as? NSArray,let
+            searchResultsTabBar = arrayOfTabBarItems[1] as? UITabBarItem {
+            
+            // Disables Results tab if no search been done yet
+            if Flights.sharedInstance.array.isEmpty{
+                searchResultsTabBar.isEnabled = false
+            } else {
+                searchResultsTabBar.isEnabled = true
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

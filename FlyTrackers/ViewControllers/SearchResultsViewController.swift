@@ -9,7 +9,7 @@ import UIKit
 import SwiftyJSON
 
 
-class SearchResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+class SearchResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarControllerDelegate  {
     
     @IBOutlet weak var flightTableView: UITableView!
     var flights = [Flight]()
@@ -19,6 +19,18 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
         
         flightTableView.delegate = self
         flightTableView.dataSource = self
+        
+        self.tabBarController?.delegate = self
+        
+        // Hack to show the Results tab as highlighted
+        self.tabBarController?.selectedIndex = 2
+        self.tabBarController?.selectedIndex = 1
+
+        // Re-enables the results tab
+        if let arrayOfTabBarItems = tabBarController?.tabBar.items as AnyObject as? NSArray,let
+            searchResultsTabBar = arrayOfTabBarItems[1] as? UITabBarItem {
+            searchResultsTabBar.isEnabled = true
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -28,6 +40,8 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
         self.flights.removeAll()
         self.flights = Flights.sharedInstance.array
         self.flightTableView.reloadData()
+        
+        
     }
     
     // MARK: - Navigation
