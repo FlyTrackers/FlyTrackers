@@ -267,8 +267,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         
         do {
             let jsonData = try Data(contentsOf: url)
-            if (try? JSON(jsonData)) != nil {
-                let data = JSON(jsonData)
+            let searchableData = JSON(jsonData)
+            if searchableData != JSON.null {
+                let data = searchableData
                 
                 // set ICAO codes
                 departureICAO = flight.departureAirportICAO

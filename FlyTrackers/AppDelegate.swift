@@ -24,13 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if defaults.string(forKey: "ClientKey") == nil {
             defaults.set(ProcessInfo.processInfo.environment["CLIENT_KEY"]!, forKey: "ClientKey")
-            
         }
+        
         defaults.synchronize()
         let apiKey = defaults.string(forKey: "APIKey")
         let clientKey = defaults.string(forKey: "ClientKey")
         
-
         // Parse Connection
         let parseConfig = ParseClientConfiguration {
             $0.applicationId = apiKey
