@@ -343,7 +343,7 @@
             </objects>
             <point key="canvasLocation" x="2598.5507246376815" y="-505.58035714285711"/>
         </scene>
-        <!--Airline Selection Table View Controller-->
+        <!--Airline Search-->
         <scene sceneID="rpT-Yb-9Cn">
             <objects>
                 <tableViewController restorationIdentifier="AirlineSelectionTableViewController" storyboardIdentifier="AirlineSelectionTableViewController" id="9uF-ii-qKd" customClass="AirlineSelectionTableViewController" customModule="FlyTrackers" customModuleProvider="target" sceneMemberID="viewController">
@@ -384,6 +384,7 @@
                             <outlet property="delegate" destination="9uF-ii-qKd" id="xEg-AW-e6t"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Airline Search" id="md7-b6-HqR"/>
                     <connections>
                         <outlet property="airlineSelectionTable" destination="gbS-dx-kk2" id="WfL-a9-3CX"/>
                         <segue destination="mRS-EK-2ak" kind="unwind" identifier="unwindToFlightSearch" unwindAction="unwind:" id="ONc-6o-2FX"/>
@@ -392,7 +393,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LTa-Ra-wci" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="mRS-EK-2ak" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-465" y="1878"/>
+            <point key="canvasLocation" x="254" y="1983"/>
         </scene>
         <!--Home/Search-->
         <scene sceneID="ab0-Rl-RLb">
@@ -529,9 +530,7 @@
                         <outlet property="airlineField" destination="7d0-bH-Xd9" id="wkf-HB-VFy"/>
                         <outlet property="dateWheel" destination="uFc-CF-GKp" id="NRu-i9-nt5"/>
                         <outlet property="flightNumberField" destination="7Dw-A6-9dw" id="0N0-Hl-7Xm"/>
-                        <segue destination="9uF-ii-qKd" kind="popoverPresentation" identifier="selectAirlineSegue" popoverAnchorView="hey-r2-rvX" id="hIK-OM-qSf">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
+                        <segue destination="9uF-ii-qKd" kind="show" identifier="selectAirlineSegue" id="hIK-OM-qSf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NGo-pC-PPN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

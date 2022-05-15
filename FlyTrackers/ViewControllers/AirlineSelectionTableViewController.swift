@@ -7,13 +7,26 @@
 
 import UIKit
 import SwiftyJSON
+import Alamofire
+import CryptoKit
 
 class AirlineSelectionTableViewController: UITableViewController {
 
     @IBOutlet var airlineSelectionTable: UITableView!
     
     var namesOfAirlines = [String]()
+    var filteredNames = [String]()
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    var isSearchBarEmpty: Bool {
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
     var chosenAirline: String = ""
+    
+    var isFiltering: Bool {
+        return searchController.isActive && !isSearchBarEmpty
+    }
     
     var airlineSelectionPopup: UIAlertController!
     
@@ -34,29 +47,78 @@ class AirlineSelectionTableViewController: UITableViewController {
         self.clearsSelectionOnViewWillAppear = true
         
         getAirlines()
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Airlines"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
 
     // MARK: - Table view data source
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isFiltering {
+            return filteredNames.count
+        }
+        
         return namesOfAirlines.count
     }
 
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AirlineCell", for: indexPath) as! AirlineCell
-
-        cell.airlineName.text = namesOfAirlines[indexPath.row]
+        
+        let airlineNameForRow: String
+        
+        if isFiltering {
+            airlineNameForRow = filteredNames[indexPath.row]
+        } else {
+            airlineNameForRow = namesOfAirlines[indexPath.row]
+        }
+        
+        cell.airlineName.text = airlineNameForRow
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Useful - https://medium.com/@ldeme/unwind-segues-in-swift-5-e392134c65fd
-        print("Airline chosen is \(namesOfAirlines[indexPath.row])")
-        chosenAirline = namesOfAirlines[indexPath.row]
-        performSegue(withIdentifier: "unwindToFlightSearch", sender: self)
+        // Useful for unwinding - https://medium.com/@ldeme/unwind-segues-in-swift-5-e392134c65fd
+        
+        if isFiltering {
+            chosenAirline = filteredNames[indexPath.row]
+        } else {
+            chosenAirline = namesOfAirlines[indexPath.row]
+        }
+        
+        
+        // Wouldn't let me transition from searched airline to flight search without this
+        // Needs to finish the navigation controller animation before returning to flight search
+        // https://stackoverflow.com/questions/60953103/popviewcontrolleranimated-called-on-uinavigationcontroller-while-an-existing-tr
+        let completion = {
+            self.navigationController?.popViewController(animated: true)
+            self.performSegue(withIdentifier: "unwindToFlightSearch", sender: self)
+        }
+
+        guard let coordinator = transitionCoordinator else {
+            completion()
+            return
+        }
+        
+        coordinator.animate(alongsideTransition: nil) { _ in
+            completion()
+        }
+        
+    }
+    
+    // MARK: - Filter Content
+    
+    func filterContentForSearchText(_ searchText: String) {
+        filteredNames = namesOfAirlines.filter { (airlineName: String) -> Bool in
+            return airlineName.lowercased().contains(searchText.lowercased())
+        }
+        
+        airlineSelectionTable.reloadData()
     }
 
     // MARK: - Get airlines from JSON
@@ -96,11 +158,18 @@ class AirlineSelectionTableViewController: UITableViewController {
         }
     
     // MARK: - Navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          if (segue.identifier == "unwindToFlightSearch") {
              let airlineSearchViewController = segue.destination as! HomeViewController
              airlineSearchViewController.airlineField.text = chosenAirline
          }
-     }
-    
+    }
+}
+
+// MARK: - Search Bar
+extension AirlineSelectionTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        filterContentForSearchText(searchBar.text!)
+    }
 }
