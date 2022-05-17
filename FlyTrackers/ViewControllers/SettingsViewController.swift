@@ -106,19 +106,15 @@ class SettingsViewController: UIViewController {
     
     @IBAction func darkModeButton(_ sender: Any) {
         
-        if darkModeControl.selectedSegmentIndex == 0 {
-            //print("on")}
-            let window = UIApplication.shared.keyWindow
-            window?.overrideUserInterfaceStyle = .light}
+        let window = UIApplication.shared.keyWindow
         
+        if darkModeControl.selectedSegmentIndex == 0 {
+            window?.overrideUserInterfaceStyle = .light
+        }
         else if darkModeControl.selectedSegmentIndex == 1{
-                //print("off")
-            let window = UIApplication.shared.keyWindow
             window?.overrideUserInterfaceStyle = .dark
         }
-        
         else {
-            let window = UIApplication.shared.keyWindow
             window?.overrideUserInterfaceStyle = .unspecified
         }
     }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,7 +24,6 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="w31-bI-Mxu" secondAttribute="height" multiplier="149:27" id="zZt-qC-62v"/>
                                         </constraints>
-
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -34,7 +33,6 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="a3Z-pk-gw3" secondAttribute="height" multiplier="1:1" id="Zax-kP-ral"/>
                                         </constraints>
-
                                     </imageView>
                                 </subviews>
                             </stackView>
@@ -46,7 +44,6 @@
                             <constraint firstItem="Rml-41-aXG" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="fWS-52-aib"/>
                             <constraint firstItem="Rml-41-aXG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kyc-au-se9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rml-41-aXG" secondAttribute="trailing" constant="36.5" id="oAl-nk-CeV"/>
-
                         </constraints>
                     </view>
                 </viewController>
