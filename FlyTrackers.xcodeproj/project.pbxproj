@@ -21,13 +21,13 @@
 		AB37A1B927E17AFA00ACDD71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37A1B827E17AFA00ACDD71 /* AppDelegate.swift */; };
 		AB37A1BB27E17AFA00ACDD71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37A1BA27E17AFA00ACDD71 /* SceneDelegate.swift */; };
 		AB37A1C027E17AFA00ACDD71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB37A1BE27E17AFA00ACDD71 /* Main.storyboard */; };
-		AB37A1C227E17AFB00ACDD71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB37A1C127E17AFB00ACDD71 /* Assets.xcassets */; };
 		AB37A1C527E17AFB00ACDD71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB37A1C327E17AFB00ACDD71 /* LaunchScreen.storyboard */; };
 		AB40DAEA27E7AE6400055803 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB40DAE927E7AE6400055803 /* FiltersViewController.swift */; };
 		AB40DAEC27E7B3FE00055803 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB40DAEB27E7B3FE00055803 /* MapViewController.swift */; };
 		AB40DAEE27E7B51200055803 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB40DAED27E7B51200055803 /* SearchResultsViewController.swift */; };
 		AB40DAF027E7B55600055803 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB40DAEF27E7B55600055803 /* ResultCell.swift */; };
 		AB9412642820C89F0045D6BB /* RateUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9412632820C89F0045D6BB /* RateUsViewController.swift */; };
+		ABD15645282B482300FEC259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD15644282B482200FEC259 /* Assets.xcassets */; };
 		CEDA1E10CFB0D1D0E7493BB2 /* Pods_FlyTrackers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B654FCD3DAA6E23AFDCCCC /* Pods_FlyTrackers.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +49,6 @@
 		AB37A1B827E17AFA00ACDD71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB37A1BA27E17AFA00ACDD71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AB37A1BF27E17AFA00ACDD71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AB37A1C127E17AFB00ACDD71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = /Users/ggpropersi/Documents/FlyTrackers/FlyTrackers/Assets.xcassets; sourceTree = "<absolute>"; };
 		AB37A1C427E17AFB00ACDD71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB37A1C627E17AFB00ACDD71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB40DAE927E7AE6400055803 /* FiltersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +56,7 @@
 		AB40DAED27E7B51200055803 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		AB40DAEF27E7B55600055803 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
 		AB9412632820C89F0045D6BB /* RateUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateUsViewController.swift; sourceTree = "<group>"; };
+		ABD15644282B482200FEC259 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6B654FCD3DAA6E23AFDCCCC /* Pods_FlyTrackers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyTrackers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -161,7 +161,7 @@
 				AB37A1B827E17AFA00ACDD71 /* AppDelegate.swift */,
 				AB37A1BA27E17AFA00ACDD71 /* SceneDelegate.swift */,
 				AB37A1BE27E17AFA00ACDD71 /* Main.storyboard */,
-				AB37A1C127E17AFB00ACDD71 /* Assets.xcassets */,
+				ABD15644282B482200FEC259 /* Assets.xcassets */,
 				AB37A1C327E17AFB00ACDD71 /* LaunchScreen.storyboard */,
 				AB37A1C627E17AFB00ACDD71 /* Info.plist */,
 			);
@@ -230,8 +230,8 @@
 			files = (
 				AB37A1C527E17AFB00ACDD71 /* LaunchScreen.storyboard in Resources */,
 				562980BD27FABE78000750F2 /* airports.json in Resources */,
-				AB37A1C227E17AFB00ACDD71 /* Assets.xcassets in Resources */,
 				AB37A1C027E17AFA00ACDD71 /* Main.storyboard in Resources */,
+				ABD15645282B482300FEC259 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
