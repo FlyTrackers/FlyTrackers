@@ -105,17 +105,24 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func darkModeButton(_ sender: Any) {
-        
+        let parseAPI = ParseAPICaller()
         let window = UIApplication.shared.keyWindow
+        var newSettings: [String: Any] = ["darkOrLight": "system", "units": "metric", "language": "ES"]
         
         if darkModeControl.selectedSegmentIndex == 0 {
             window?.overrideUserInterfaceStyle = .light
+            newSettings["darkOrLight"] = "light"
+            print(newSettings)
         }
         else if darkModeControl.selectedSegmentIndex == 1{
             window?.overrideUserInterfaceStyle = .dark
+            newSettings["darkOrLight"] = "dark"
+            print(newSettings)
         }
         else {
             window?.overrideUserInterfaceStyle = .unspecified
+            newSettings["darkOrLight"] = "system"
+            print(newSettings)
         }
     }
     

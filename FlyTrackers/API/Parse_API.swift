@@ -202,7 +202,7 @@ class ParseAPICaller {
     /// Example parse call for settings a user's default settings
     ///     let parseAPI = ParseAPICaller()
     ///     let newSettings: [String: Any] = [
-    ///             "darkOrLight": true,
+    ///             "darkOrLight": "system",
     ///             "units": "metric",
     ///             "language": "ES"
     ///             ]
